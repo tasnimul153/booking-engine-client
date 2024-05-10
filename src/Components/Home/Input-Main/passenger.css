@@ -1,0 +1,119 @@
+.passengerAndClassDropdown {
+  position: absolute;
+  width: 400px;
+  height: -moz-max-content;
+  height: max-content;
+  padding-bottom: 15px;
+  left: 0;
+  top: 110px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.4);
+  z-index: 10;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 200px;
+  border-radius: 5px;
+}
+.passengerAndClassDropdown .container .radio-inputs {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  box-sizing: border-box;
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+  width: 400px;
+  padding: 10px;
+  left: -25px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.passengerAndClassDropdown .container .radio-inputs .radio {
+  flex: 1 1 auto;
+  text-align: center;
+}
+.passengerAndClassDropdown .container .radio-inputs .radio .name {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 12px;
+  font-family: "Open Sans", sans-serif;
+  padding: 0.5rem 0;
+  color: rgb(51, 65, 85);
+  transition: all 0.3s ease-in-out;
+}
+.passengerAndClassDropdown .container .radio-inputs .radio input {
+  display: none;
+}
+.passengerAndClassDropdown .container .radio-inputs .radio :hover {
+  background-color: rgba(35, 150, 196, 0.199);
+  border-radius: 10px;
+  padding: 8px 0px;
+}
+.passengerAndClassDropdown .container .radio-inputs .active-radio {
+  background-color: rgba(35, 150, 196, 0.199);
+  border-radius: 10px;
+  font-size: bold;
+  padding: 0px 5px;
+  transition: all 0.3s ease-in-out;
+}
+.passengerAndClassDropdown .container .radio-inputs .active-radio .name {
+  color: rgb(0, 95, 133);
+}
+.passengerAndClassDropdown .container .radio-inputs .active-radio :hover {
+  background-color: transparent;
+}
+.passengerAndClassDropdown .container .passengerCount {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.passengerAndClassDropdown .container .passengerCount .textContainer {
+  display: flex;
+  flex-direction: column;
+}
+.passengerAndClassDropdown .container .passengerCount .info {
+  font-size: 10px;
+  color: rgba(51, 65, 85, 0.87);
+}
+.passengerAndClassDropdown .container .passengerCount .adultsTitle, .passengerAndClassDropdown .container .passengerCount .info {
+  margin: 0px 0px 0px -10px;
+}
+.passengerAndClassDropdown .container .passengerCount .counterButtonContainer {
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.passengerAndClassDropdown .container .passengerCount .counterButtonContainer .counterButton {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  color: rgb(56, 151, 206);
+}
+.passengerAndClassDropdown .container .passengerCount .counterButtonContainer .counterButton:hover {
+  background-color: rgba(56, 151, 206, 0.582);
+  border: none;
+  color: white;
+}
+.passengerAndClassDropdown .container .passengerCount .counterButtonContainer .count {
+  color: rgb(0, 138, 202);
+}
+
+.passengerAndClassDropdown.activeDrop {
+  opacity: 1;
+  visibility: visible;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-top: 15px;
+  transition: all 0.3s ease-in-out;
+}/*# sourceMappingURL=passenger.css.map */

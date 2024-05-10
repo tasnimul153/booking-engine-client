@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f798e58b.css",
+    "main.js": "/static/js/main.723b0b96.js",
+    "static/media/BackgroundHomePage3.jpg": "/static/media/BackgroundHomePage3.be7a2f5ded9796299356.jpg",
+    "static/media/BackgroundHomePage2.jpg": "/static/media/BackgroundHomePage2.134996f675f6b586fe08.jpg",
+    "static/media/dealImg3.jpg": "/static/media/dealImg3.d320979d1d23e8439c64.jpg",
+    "static/media/dealImg2.jpg": "/static/media/dealImg2.a2132fd2ecdd87c4f0ec.jpg",
+    "static/media/dealImg1.jpg": "/static/media/dealImg1.6efa26b396bafd45688e.jpg",
+    "static/media/dealImg5.jpg": "/static/media/dealImg5.2d212d67c142d37126fe.jpg",
+    "static/media/signupAirplane.jpg": "/static/media/signupAirplane.90284bb4ba0c742798ca.jpg",
+    "static/media/dealImg6.jpg": "/static/media/dealImg6.551d06726088e953f827.jpg",
+    "static/media/BackgroundHomePage4.jpg": "/static/media/BackgroundHomePage4.96c81fed7b1099cb0df5.jpg",
+    "static/media/BackgroundHomePage1.jpg": "/static/media/BackgroundHomePage1.05912711fef2ad4627d9.jpg",
+    "static/media/dealImg4.jpg": "/static/media/dealImg4.897be59adf4c3ff15f5f.jpg",
+    "static/media/mockup.png": "/static/media/mockup.fbbcef04084b25ab7807.png",
+    "static/media/playbutton.png": "/static/media/playbutton.950f6a848d44a4265ce5.png",
+    "index.html": "/index.html",
+    "main.f798e58b.css.map": "/static/css/main.f798e58b.css.map",
+    "main.723b0b96.js.map": "/static/js/main.723b0b96.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f798e58b.css",
+    "static/js/main.723b0b96.js"
+  ]
+}
