@@ -946,25 +946,8 @@ $mainTopRadius: 50px;
                 top: 90px;
                 flex-wrap: wrap;
 
-                #overlayImg {}
-
                 .radioBox {
                     margin: 0 auto 20px auto;
-
-                    .activeRadio {}
-
-                    .radio_input {
-
-                        &:hover {}
-
-                        .radio_button {}
-
-                        .radio_label {}
-
-                        #activeIcon {}
-
-                        #inactiveIcon {}
-                    }
                 }
 
                 .inputBox {
@@ -973,71 +956,6 @@ $mainTopRadius: 50px;
                     margin-bottom: 10px;
                     height: fit-content;
                     gap: 5px;
-
-                    .inputFieldBox {
-
-                        #swapIcon {
-                            display: none;
-
-                            &:hover {}
-                        }
-
-                        .dropdownListSearch {
-
-                            .dropdownListSearch::-webkit-scrollbar {}
-
-                            .dropdownListSearch::-webkit-scrollbar-track {}
-
-                            .dropdownListSearch::-webkit-scrollbar-thumb {}
-
-                            .searchBox {
-
-                                #searchIcon {}
-
-                                input {
-
-                                    &:focus {}
-                                }
-                            }
-
-                            @keyframes loadingBarAnimation {
-                                to {}
-                            }
-
-                            .horizontal-loader {}
-
-                            .dropdownItem {
-
-                                &:hover {}
-                            }
-
-                            .MetaLocation {
-
-                                .airport-name {}
-                            }
-                        }
-                    }
-
-                    .mainInput {
-                        &:hover {}
-
-                        .dataBox {
-
-                            .constant-tag {
-
-                                #dropdownArrow {}
-                            }
-
-                            .Middle {}
-
-                            .Last {}
-                        }
-                    }
-
-                    .DateInactive {
-
-                        &:hover {}
-                    }
                 }
 
                 .operation-tab {
@@ -1045,8 +963,6 @@ $mainTopRadius: 50px;
 
                     .important-links {
                         width: 60%;
-
-                        p {}
                     }
 
                     .searchBtn {

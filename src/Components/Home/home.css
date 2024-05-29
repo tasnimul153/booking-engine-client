@@ -839,10 +839,6 @@
     height: fit-content;
     gap: 5px;
   }
-  .home .homeContent .cardDiv .inputBox .inputFieldBox #swapIcon {
-    display: none;
-  }
-  @keyframes loadingBarAnimation {}
   .home .homeContent .cardDiv .operation-tab {
     width: 100%;
   }
