@@ -348,7 +348,7 @@ body {
 .Container .search-box-container .search-inputs .dropdownListSearch .MetaLocation {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
   width: 88%;
   overflow-x: hidden;
@@ -359,7 +359,7 @@ body {
 .Container .search-box-container .search-inputs .dataBox {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   justify-content: space-between;
   width: 15.9vw;
   height: 100%;
@@ -494,7 +494,7 @@ body {
   display: flex;
   flex-direction: row;
   padding-bottom: 5px;
-  justify-content: start;
+  justify-content: flex-start;
   font-size: 13px;
   gap: 10px;
 }
@@ -520,7 +520,7 @@ body {
   font-size: 13px;
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 10px;
   margin-bottom: 5px;
 }
@@ -678,7 +678,7 @@ body {
   .Container .search-box-container .search-inputs .dropdownListSearch .MetaLocation {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     justify-content: center;
     width: 88%;
     overflow-x: hidden;
@@ -689,7 +689,7 @@ body {
   .Container .search-box-container .search-inputs .dataBox {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     justify-content: space-between;
     width: 15.9vw;
     height: 100%;
@@ -823,7 +823,7 @@ body {
     display: flex;
     flex-direction: row;
     padding-bottom: 5px;
-    justify-content: start;
+    justify-content: flex-start;
     gap: 10px;
   }
   .Container .searched-flights-container .controller .controller-container .filter-flights .flight-filter-box .carrier input {
@@ -847,7 +847,7 @@ body {
     font-size: 14px;
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: flex-start;
     gap: 10px;
     margin-bottom: 5px;
   }
@@ -985,7 +985,7 @@ body {
   .Container .search-box-container .search-inputs .dropdownListSearch .MetaLocation {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     justify-content: center;
     width: 88%;
     overflow-x: hidden;
@@ -996,7 +996,7 @@ body {
   .Container .search-box-container .search-inputs .dataBox {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     justify-content: space-between;
     width: 20vw;
     height: 100%;
@@ -1126,7 +1126,7 @@ body {
     display: flex;
     flex-direction: row;
     padding-bottom: 5px;
-    justify-content: start;
+    justify-content: flex-start;
     gap: 10px;
   }
   .Container .searched-flights-container .controller .controller-container .filter-flights .flight-filter-box .carrier input {
@@ -1154,7 +1154,7 @@ body {
     font-size: 14px;
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: flex-start;
     gap: 10px;
     margin-bottom: 5px;
   }
