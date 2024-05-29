@@ -1,20 +1,15 @@
-import { React, useEffect, useState, useContext } from "react";
-import { useLocation, useParams } from "react-router-dom";
-import { AiOutlineSearch } from "react-icons/ai";
-import { AiOutlineSwap } from "react-icons/ai";
+import { React, useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import Location from "../Home/Input-Main/Location/Location";
 import DatePicker from "../Home/Input-Main/DatePicker";
 import Passenger from "../Home/Input-Main/Passenger";
 import { useSearchInputs } from "../Functions/useSearchInputs";
-import Radio from "../Home/Input-Main/Radio";
 import "./searchPage.css";
 import { fetchAccessToken } from "../../FetchAPIs";
 import axios from 'axios';
 import axiosRetry from 'axios-retry';
 import Flight from "./Flight";
 import { Link } from "react-router-dom";
-import Geocode from "react-geocode";
-import { NearestAirportsListContext } from '../../App';
 
 const SearchPage = () => {
     const data = useLocation();
@@ -23,8 +18,6 @@ const SearchPage = () => {
     const [accessToken, setAccessToken] = useState("");
     const [loading, setLoading] = useState(true);
     const [dataAvailable, setDataAvailable] = useState(false);
-
-    const [NearestAirportsList, setNearestAirportsList] = useContext(NearestAirportsListContext);
 
     const [flightData, setFlightData] = useState({
         "data": [],
@@ -39,8 +32,6 @@ const SearchPage = () => {
     axiosRetry(axios, { retries: 3, retryDelay: axiosRetry.exponentialDelay });
 
     const {
-        setFromData,
-        setToData,
         setDepartureDate,
         setReturnDate,
         setPassengerAndClass,
@@ -51,14 +42,9 @@ const SearchPage = () => {
         returnDate,
         departureDate,
         radioValue,
-        handleRadioChange,
         handleSelect,
         handleDateSelect,
         handlePassengerAndClassSelect,
-        onSwap,
-        passengerCount,
-        classType,
-        searchClicked,
     } = useSearchInputs();
 
     const [sortByPrice, setSortByPrice] = useState(1);
@@ -93,8 +79,7 @@ const SearchPage = () => {
         infants: searchParams.get("infantCount"),
         travelClass: searchParams.get("classType"),
         nonStop: false,
-        currencyCode: searchParams.get("currencyCode"),
-        max: 50,
+        currencyCode: searchParams.get("currencyCode")
     });
 
     useEffect(() => {

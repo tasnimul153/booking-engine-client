@@ -1,9 +1,7 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
-import { useFlightSearch } from "../SearchPage/useFlightSearch";
+import React, { useContext, useEffect, useState } from "react";
 import { MdFlight } from "react-icons/md";
 import { FaSuitcaseRolling } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import { FaLuggageCart } from "react-icons/fa";
 import { FlightDetailsContext } from "../Contexts/FlightDetailContext";
 import { fetchAccessToken } from "../../FetchAPIs";
 import { FaAngleRight } from "react-icons/fa";
@@ -15,23 +13,6 @@ import axios from "axios";
 
 
 const Flight = ({ flight, isFirst, currencyCode, dictionaries, passengerAndClass }) => {
-
-    /*useEffect(() => {
-        const fetchFlightOffers = async () => {
-            setLoading(true); // Set loading to true before starting the fetch
-            axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}/flights`, { params })
-                .then((response) => {
-                    setFlightData(response.data);
-                    console.log(response.data);
-                    setLoading(false); // Set loading to false after fetch is complete
-                })
-                .catch((error) => {
-                    console.error('Error fetching flight offers:', error);
-                    setLoading(false); // Set loading to false in case of error
-                });
-        }
-        fetchFlightOffers();
-    }, [params]);*/
 
     const navigate = useNavigate();
     const [isExpended, setIsExpended] = useState(false);
