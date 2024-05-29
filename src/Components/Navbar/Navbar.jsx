@@ -1,7 +1,5 @@
 import { React, useEffect, useState } from "react";
 import "./navbar.css";
-import { SiYourtraveldottv } from "react-icons/si";
-import { AiFillCloseCircle } from "react-icons/ai";
 import { HiBars3BottomRight } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
