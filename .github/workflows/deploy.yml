@@ -13,27 +13,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '18.12.1'
-
-      - name: Install dependencies
-        run: npm install --verbose
-
-      - name: Check Node and npm versions
-        run: |
-          node -v
-          npm -v
-
-      - name: List installed packages
-        run: npm list
-
-      - name: Build the app
-        run: npm run build
-        env:
-          REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
-
       - name: Deploy to S3
         run: |
           aws s3 sync build/ s3://a1travel.net --delete
