@@ -62,7 +62,7 @@ const Navbar = () => {
               </Link>
             </div>
 
-            {/* Navigation Bar */}
+            {/* Navigation Bar  */}
             <div className={active}>
               <ul className="navLists flex">
                 <li className="navItem">
