@@ -290,7 +290,7 @@ const SearchPage = () => {
                                 <div className="controller">
                                     <div className="controller-container">
                                         <div className="filter-flights">
-                                            <span className="ct-title">Flights </span><span className="flight-count">({Object.keys(flightData.dictionaries.carriers).length})</span>
+                                            <span className="ct-title">Flights </span><span className="flight-count">{Object.keys(flightData.dictionaries.carriers).length}</span>
                                             <div className="flight-filter-box">
                                                 {
                                                     Object.entries(flightData.dictionaries.carriers).map(([carrierId, carrierName], index) => {
@@ -324,6 +324,7 @@ const SearchPage = () => {
                                                 return (
                                                     <Flight
                                                         key={index}
+                                                        isFirst={index === 0}
                                                         flight={flight}
                                                         currencyCode={params.currencyCode}
                                                         dictionaries={flightData.dictionaries}
@@ -336,6 +337,7 @@ const SearchPage = () => {
                                                         return (
                                                             <Flight
                                                                 key={index}
+                                                                isFirst={index === 0}
                                                                 flight={flight}
                                                                 currencyCode={params.currencyCode}
                                                                 dictionaries={flightData.dictionaries}

@@ -5,38 +5,52 @@ import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 const Footer = () => {
     return (
         <div className='footer'>
-            <div className='footer__container'>
-                <div className='infoBox'>
-                    <div className="about">
-                        <h2>About</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    </div>
-                    <div className='services'>
-                        <h2>Services</h2>
-                        <ul>
-                            <li>Flight search</li>
-                            <li>Booking flights</li>
-                            <li>Select seats</li>
-                            <li>Cheap flights</li>
-                        </ul>
-                    </div>
-                    <div className="contact">
-                        <h2>Contact</h2>
-                        <ul>
-                            <li><span className='bold-span'>Address:</span> 51 Falcons Nest Cir</li>
-                            <li><span className='bold-span'>Apartment:</span> 99-6</li>
-                            <li><span className='bold-span'>Contact:</span> (432) 316 - 0316</li>
-                        </ul>
-                    </div>
+            <div className='footer-content'>
+                <div className='footer-section'>
+                    <h3>Company</h3>
+                    <ul>
+                        <li>About us</li>
+                        <li>Press</li>
+                        <li>Investors</li>
+                        <li>Partners</li>
+                        <li>Blog</li>
+                    </ul>
                 </div>
-                <div className='iconsGroup'>
-                    <FaFacebook className="icons" />
-                    <FaInstagram className="icons" />
-                    <FaTwitter className="icons" />
-                    <FaYoutube className="icons" />
+                <div className='footer-section'>
+                    <h3>Support</h3>
+                    <ul>
+                        <li>Contact us</li>
+                        <li>FAQs</li>
+                        <li>Privacy policy</li>
+                        <li>Terms of use</li>
+                        <li>Accessibility</li>
+                    </ul>
                 </div>
-                <div className='footer-last'>
-                    <p>© 2023 All rights reserved.</p>
+                <div className='footer-section'>
+                    <h3>Services</h3>
+                    <ul>
+                        <li>Flights</li>
+                        <li>Hotels</li>
+                        <li>Cars</li>
+                        <li>Deals</li>
+                        <li>Travel guides</li>
+                    </ul>
+                </div>
+                <div className='footer-section'>
+                    <h3>Connect</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>LinkedIn</li>
+                        <li>Youtube</li>
+                    </ul>
+                </div>
+                <div className='footer-section'>
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest updates on our services, deals, and more.</p>
+                    <input type="email" placeholder="Enter your email" />
+                    <button onClick={() => alert("Coming Soon")}>Subscribe</button>
                 </div>
             </div>
         </div>

@@ -14,7 +14,7 @@ import { MdEventSeat } from "react-icons/md";
 import axios from "axios";
 
 
-const Flight = ({ flight, currencyCode, dictionaries, passengerAndClass }) => {
+const Flight = ({ flight, isFirst, currencyCode, dictionaries, passengerAndClass }) => {
 
     /*useEffect(() => {
         const fetchFlightOffers = async () => {
@@ -157,7 +157,6 @@ const Flight = ({ flight, currencyCode, dictionaries, passengerAndClass }) => {
                         })
                     }
                 </div>
-
                 <div className="pricing">
                     <span className="price-currency">{currencySymbol}</span>
                     <span className="price">{Math.floor(flight.price.grandTotal)}</span>
@@ -183,36 +182,24 @@ const Flight = ({ flight, currencyCode, dictionaries, passengerAndClass }) => {
                                 {`${flight.itineraries[0].segments.length - 1} Layover`}
                             </div> : <div className="layover-count">DIRECT</div>
                     }
-                    {/*flight.itineraries[0].segments.length - 1 > 0 ? <div className="dot-gray"></div> : null}
-                    {
-
-                        flight.itineraries[0].segments.length - 1 > 0 ?
-                            <div className="layover-duration-total"> Transit duration total:
-                                {
-                                    (() => {
-                                        // Parse total duration in minutes
-                                        let totalDurationMinutes = parseDuration(flight.itineraries[0].duration);
-
-                                        flight.itineraries[0].segments.forEach((segment) => {
-                                            // Parse segment duration in minutes
-                                            const segmentDurationMinutes = parseDuration(segment.duration);
-
-                                            // Subtract segment duration from total duration
-                                            totalDurationMinutes -= segmentDurationMinutes;
-                                        });
-
-                                        const layoverHours = Math.floor(totalDurationMinutes / 60);
-                                        const layoverMinutes = totalDurationMinutes % 60;
-
-                                        return ` ${layoverHours} ${layoverHours > 9 ? 'Hours' : 'Hour'}, ${layoverMinutes} ${layoverMinutes > 9 ? 'Minutes' : 'Minute'} `;
-                                    })()
-                                }
-                            </div>
-                            : null*/
-                    }
                 </div>
                 <div className="right-facilities">
-                    {flight.travelerPricings[0].fareDetailsBySegment[0].cabin}
+                    {
+                        // if all fareDetailsBySegment have same cabin class
+
+                        flight.itineraries[0].segments.every((segment, index) => {
+                            return flight.travelerPricings[0].fareDetailsBySegment[index].cabin === flight.travelerPricings[0].fareDetailsBySegment[0].cabin;
+                        }) ? flight.travelerPricings[0].fareDetailsBySegment[0].cabin :
+                            // print all cabin classes but filter duplicates
+                            flight.itineraries[0].segments.map((segment, index) => {
+                                return flight.travelerPricings[0].fareDetailsBySegment[index].cabin;
+                            }).filter((value, index, self) => {
+                                return self.indexOf(value) === index;
+                            }).join(' - ')
+
+                    }
+                    {isFirst && <p className="cheap-indicator">Cheapest </p>}
+
                 </div>
             </div>
             {

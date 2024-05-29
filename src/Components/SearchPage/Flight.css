@@ -63,7 +63,7 @@ body {
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
-  background: white;
+  background: rgb(255, 255, 255);
   border-radius: 2px;
   padding: 0px 0px 15px 0px;
   border: 1px solid rgba(71, 71, 71, 0.164);
@@ -74,7 +74,7 @@ body {
   display: flex;
   flex-direction: row;
   border-radius: 2px;
-  background: linear-gradient(45deg, rgba(255, 221, 189, 0.062), rgba(255, 208, 0, 0.04));
+  background: linear-gradient(45deg, rgb(255, 221, 189), rgb(255, 208, 0));
 }
 .flight .carrier-info .carriers {
   width: 100%;
@@ -1338,4 +1338,4 @@ body {
     color: white;
     cursor: pointer;
   }
-}/*# sourceMappingURL=flight.css.map */
+}/*# sourceMappingURL=Flight.css.map */

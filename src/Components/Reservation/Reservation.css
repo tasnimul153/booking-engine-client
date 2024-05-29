@@ -18,10 +18,14 @@ body {
   height: 100%;
   margin: 0 auto;
 }
-.container-reservation .final-details h3 {
-  font-size: 40px;
-  font-weight: 100;
-  color: rgb(0, 46, 133);
+.container-reservation .final-details .title {
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(0, 0, 0);
+  font-family: "Open Sans", sans-serif;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  padding-left: 20px;
 }
 .container-reservation .final-details .display-details {
   padding: 30px 0px;
@@ -33,17 +37,18 @@ body {
   width: 50%;
   height: 100%;
   padding-right: 20px;
-  border-right: 1px solid rgba(48, 48, 48, 0.151);
 }
 .container-reservation .final-details .display-details .customer-inputs .each-customer {
   margin-bottom: 30px;
-  border-bottom: 1px solid rgba(48, 48, 48, 0.151);
   padding-bottom: 20px;
+  border: 1px solid rgba(48, 48, 48, 0.151);
+  border-radius: 5px;
 }
 .container-reservation .final-details .display-details .customer-inputs .each-customer .passenger-number-label {
-  font-size: 20px;
-  color: rgb(0, 46, 133);
-  margin-bottom: 2px;
+  font-size: 15px;
+  font-family: "Open Sans", sans-serif;
+  color: rgb(0, 0, 0);
+  padding: 10px;
   font-weight: 600;
 }
 .container-reservation .final-details .display-details .customer-inputs .input-group {
@@ -55,21 +60,25 @@ body {
   display: flex;
   flex-direction: column;
   width: 90%;
+  padding: 10px;
 }
 .container-reservation .final-details .display-details .customer-inputs .input-group .input-box label {
-  font-size: 15px;
-  color: rgb(0, 46, 133);
+  font-size: 12px;
+  color: rgb(0, 0, 0);
   margin-bottom: 2px;
+  font-family: "Open Sans", sans-serif;
   font-weight: 600;
 }
 .container-reservation .final-details .display-details .customer-inputs .input-group .input-box input {
   width: 100%;
   height: 30px;
-  border: 1px solid rgba(0, 40, 116, 0.411);
+  border: none;
+  border-bottom: 1px solid rgba(0, 40, 116, 0.411);
   padding: 0 10px;
-  font-size: 15px;
-  font-weight: 100;
-  color: rgb(0, 46, 133);
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: black;
 }
 .container-reservation .final-details .display-details .customer-inputs .input-group .input-box input:focus {
   outline: none;
@@ -91,13 +100,12 @@ body {
 .container-reservation .final-details .display-details .customer-inputs .contact-section .input-box input[type=text] {
   width: 100%;
   height: 30px;
-  border: 1px solid rgba(0, 40, 116, 0.411);
+  border-bottom: 1px solid rgba(0, 40, 116, 0.411);
   border-left: none;
-  padding: 0 10px 0 35px;
+  padding: 0 10px 0 5px;
   font-size: 15px;
-  letter-spacing: 2px;
   font-weight: 500;
-  color: rgb(0, 46, 133);
+  color: rgb(0, 0, 0);
 }
 .container-reservation .final-details .display-details .customer-inputs .contact-section .input-box input[type=email]:focus,
 .container-reservation .final-details .display-details .customer-inputs .contact-section .input-box input[type=text]:focus {
@@ -142,7 +150,7 @@ body {
 }
 .container-reservation .final-details .display-details .customer-inputs .demographic-section .input-box .dropDownGroup .dropdown-item label {
   font-size: 12px;
-  color: rgb(0, 46, 133);
+  color: rgb(0, 0, 0);
   margin-bottom: 2px;
   font-weight: 600;
 }
@@ -153,7 +161,7 @@ body {
   padding: 0 10px;
   font-size: 15px;
   font-weight: 100;
-  color: rgb(0, 46, 133);
+  color: rgb(0, 0, 0);
 }
 .container-reservation .final-details .display-details .customer-inputs .demographic-section .input-box .dropDownGroup .dropdown-item select:focus {
   outline: none;
@@ -166,7 +174,7 @@ body {
   margin-top: 25px;
   border-bottom: 1px solid rgba(0, 40, 116, 0.411);
   font-size: 15px;
-  color: rgb(0, 46, 133);
+  color: rgb(0, 0, 0);
 }
 .container-reservation .final-details .display-details .customer-inputs .demographic-section .input-box select[name=gender]:focus {
   outline: none;
@@ -177,21 +185,23 @@ body {
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
   margin-top: 30px;
-  background-color: rgba(255, 234, 163, 0.24);
+  border-radius: 5px;
+  font-size: 12px;
+  border: 1px solid rgba(24, 24, 24, 0.185);
 }
 .container-reservation .final-details .display-details .customer-inputs .card-section .input-box {
   width: 100%;
 }
 .container-reservation .final-details .display-details .customer-inputs .card-section .input-box label {
   display: block;
-  font-size: 14px;
+  font-size: 12px;
   color: #333;
   margin-bottom: 5px;
 }
 .container-reservation .final-details .display-details .customer-inputs .card-section .input-box input[type=text] {
   width: 100%;
+  font-size: 12px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -220,11 +230,10 @@ body {
   flex-direction: row;
   justify-content: space-between;
   margin-top: 20px;
-  gap: 20px;
 }
 .container-reservation .final-details .display-details .customer-inputs .card-section .card-meta-1 .input-box label {
   display: block;
-  font-size: 14px;
+  font-size: 12px;
   color: #333;
   margin-bottom: 5px;
 }
@@ -233,6 +242,13 @@ body {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+}
+.container-reservation .final-details .display-details .customer-inputs .card-section .card-meta-2 .dropDownGroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 20px;
 }
 .container-reservation .final-details .display-details .customer-inputs .card-section .card-meta-2 .dropDownGroup,
 .container-reservation .final-details .display-details .customer-inputs .card-section .card-meta-3 .dropDownGroup {
@@ -247,7 +263,7 @@ body {
 .container-reservation .final-details .display-details .customer-inputs .card-section .card-meta-2 .dropDownGroup .dropdown-item label,
 .container-reservation .final-details .display-details .customer-inputs .card-section .card-meta-3 .dropDownGroup .dropdown-item label {
   display: block;
-  font-size: 14px;
+  font-size: 12px;
   color: #333;
   margin-bottom: 5px;
 }
@@ -360,7 +376,7 @@ body {
 }
 .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .carrier-info .carrier .signature h3 {
   font-size: 15px;
-  color: rgb(0, 46, 133);
+  color: rgb(0, 0, 0);
 }
 .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .carrier-info .carrier .signature p {
   font-size: 12px;
@@ -385,12 +401,16 @@ body {
   flex-direction: row;
   justify-content: space-between;
 }
-.container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .departure-info .iataCode, .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .arrival-info .iataCode {
+.container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .departure-info .iataCode,
+.container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .arrival-info .iataCode {
   font-size: 40px;
   font-weight: 500;
   color: black;
 }
-.container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .departure-info .date, .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .departure-info .time, .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .arrival-info .date, .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .arrival-info .time {
+.container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .departure-info .date,
+.container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .departure-info .time,
+.container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .arrival-info .date,
+.container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .arrival-info .time {
   font-size: 15px;
   font-weight: 400;
 }
@@ -405,11 +425,11 @@ body {
   height: 10px;
   border: none;
   margin-top: 40px;
-  border-bottom: 1px solid rgb(0, 46, 133);
+  border-bottom: 1px solid rgb(0, 0, 0);
 }
 .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .visual .icon {
   font-size: 20px;
-  color: rgb(0, 46, 133);
+  color: rgb(0, 0, 0);
   position: relative;
   top: -15px;
   left: 42%;
@@ -460,7 +480,7 @@ body {
   .container-reservation .final-details h3 {
     font-size: 30px;
     font-weight: 100;
-    color: rgb(0, 46, 133);
+    color: rgb(0, 0, 0);
   }
   .container-reservation .final-details .display-details .booking-details .information-container {
     padding: 20px;
@@ -501,7 +521,7 @@ body {
   }
   .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .carrier-info .carrier .signature h3 {
     font-size: 12px;
-    color: rgb(0, 46, 133);
+    color: rgb(0, 0, 0);
   }
   .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .carrier-info .carrier .signature p {
     font-size: 10px;
@@ -526,12 +546,16 @@ body {
     flex-direction: row;
     justify-content: space-between;
   }
-  .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .departure-info .iataCode, .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .arrival-info .iataCode {
+  .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .departure-info .iataCode,
+  .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .arrival-info .iataCode {
     font-size: 30px;
     font-weight: 500;
     color: black;
   }
-  .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .departure-info .date, .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .departure-info .time, .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .arrival-info .date, .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .arrival-info .time {
+  .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .departure-info .date,
+  .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .departure-info .time,
+  .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .arrival-info .date,
+  .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .arrival-info .time {
     font-size: 12px;
     font-weight: 400;
   }
@@ -594,7 +618,7 @@ body {
   .container-reservation .final-details h3 {
     font-size: 30px;
     font-weight: 100;
-    color: rgb(0, 46, 133);
+    color: rgb(0, 0, 0);
   }
   .container-reservation .final-details .display-details {
     padding: 30px 0px;
@@ -614,7 +638,7 @@ body {
   }
   .container-reservation .final-details .display-details .customer-inputs .each-customer .passenger-number-label {
     font-size: 20px;
-    color: rgb(0, 46, 133);
+    color: rgb(0, 0, 0);
     margin-bottom: 2px;
     font-weight: 600;
   }
@@ -630,7 +654,7 @@ body {
   }
   .container-reservation .final-details .display-details .customer-inputs .input-group .input-box label {
     font-size: 15px;
-    color: rgb(0, 46, 133);
+    color: rgb(0, 0, 0);
     margin-bottom: 2px;
     font-weight: 600;
   }
@@ -641,7 +665,7 @@ body {
     padding: 0 10px;
     font-size: 15px;
     font-weight: 100;
-    color: rgb(0, 46, 133);
+    color: rgb(0, 0, 0);
   }
   .container-reservation .final-details .display-details .customer-inputs .input-group .input-box input:focus {
     outline: none;
@@ -669,7 +693,7 @@ body {
     font-size: 15px;
     letter-spacing: 2px;
     font-weight: 500;
-    color: rgb(0, 46, 133);
+    color: rgb(0, 0, 0);
   }
   .container-reservation .final-details .display-details .customer-inputs .contact-section .input-box input[type=email]:focus,
   .container-reservation .final-details .display-details .customer-inputs .contact-section .input-box input[type=text]:focus {
@@ -714,7 +738,7 @@ body {
   }
   .container-reservation .final-details .display-details .customer-inputs .demographic-section .input-box .dropDownGroup .dropdown-item label {
     font-size: 12px;
-    color: rgb(0, 46, 133);
+    color: rgb(0, 0, 0);
     margin-bottom: 2px;
     font-weight: 600;
   }
@@ -725,7 +749,7 @@ body {
     padding: 0 10px;
     font-size: 15px;
     font-weight: 100;
-    color: rgb(0, 46, 133);
+    color: rgb(0, 0, 0);
   }
   .container-reservation .final-details .display-details .customer-inputs .demographic-section .input-box .dropDownGroup .dropdown-item select:focus {
     outline: none;
@@ -738,7 +762,7 @@ body {
     margin-top: 25px;
     border-bottom: 1px solid rgba(0, 40, 116, 0.411);
     font-size: 15px;
-    color: rgb(0, 46, 133);
+    color: rgb(0, 0, 0);
   }
   .container-reservation .final-details .display-details .customer-inputs .demographic-section .input-box select[name=gender]:focus {
     outline: none;
@@ -933,7 +957,7 @@ body {
   }
   .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .carrier-info .carrier .signature h3 {
     font-size: 15px;
-    color: rgb(0, 46, 133);
+    color: rgb(0, 0, 0);
   }
   .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .carrier-info .carrier .signature p {
     font-size: 12px;
@@ -958,12 +982,16 @@ body {
     flex-direction: row;
     justify-content: space-between;
   }
-  .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .departure-info .iataCode, .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .arrival-info .iataCode {
+  .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .departure-info .iataCode,
+  .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .arrival-info .iataCode {
     font-size: 40px;
     font-weight: 500;
     color: black;
   }
-  .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .departure-info .date, .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .departure-info .time, .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .arrival-info .date, .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .arrival-info .time {
+  .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .departure-info .date,
+  .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .departure-info .time,
+  .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .arrival-info .date,
+  .container-reservation .final-details .display-details .booking-details .information-container .flight-detail-container .flightDetails .segmentContainer .destinations .arrival-info .time {
     font-size: 15px;
     font-weight: 400;
   }

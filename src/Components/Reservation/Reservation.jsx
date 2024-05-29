@@ -5,21 +5,41 @@ import { FlightDetailsContext } from "../Contexts/FlightDetailContext";
 import { MdOutlineMail } from "react-icons/md";
 import { FiPhoneCall } from "react-icons/fi";
 import { MdFlight } from "react-icons/md";
-
+import { getNames } from 'country-list';
 
 const Reservation = () => {
-
+    const countries = getNames();
     const navigate = useNavigate();
     const data = useLocation();
     //const ticketDetails = new URLSearchParams(data.search);
-
     const { metaData, setMetaData } = useContext(FlightDetailsContext);
+
+    const passengerCount = metaData.flight.data.flightOffers[0].travelerPricings.length;
+
+    const [passengerDetails, setPassengerDetails] = useState(Array(passengerCount).fill({
+        firstName: '',
+        middleName: '',
+        lastName: '',
+        email: '',
+        contact: '',
+        dob: {
+            year: '',
+            month: '',
+            day: ''
+        },
+        gender: ''
+    }));
+
+    const handleInputChange = (index, field, value) => {
+        const newPassengerDetails = [...passengerDetails];
+        newPassengerDetails[index][field] = value;
+        setPassengerDetails(newPassengerDetails);
+    };
+
     const [loading, setLoading] = useState(false);
     const [accessToken, setAccessToken] = useState('');
     const [flightData, setFlightData] = useState({});
 
-    //const passengerCount = metaData.passengerAndClass.passenger_count;
-    const passengerCount = 1;
 
     const handleOnClick = async () => {
         console.log(metaData);
@@ -105,42 +125,42 @@ const Reservation = () => {
     }
 
     const dictionaries = metaData.dictionary;
-    const flightSegments = metaData.flight.data.flightOffers[0].itineraries[0];
+    const flightSegments = metaData.flight.data.flightOffers[0];
 
     return (
         <div className="container-reservation">
             <div className="final-details">
-                <h3>Confirm Booking</h3>
+                <h3 className="title">Confirm Booking</h3>
                 <div className="display-details">
                     <div className="customer-inputs">
                         {
                             Array.from({ length: passengerCount }, (_, index) => (
                                 <div className="each-customer" key={index}>
                                     <h4 className="passenger-number-label">Passenger {index + 1} <span className="star" style={{ color: "red" }}>*</span></h4>
-                                    <div className="input-group name-section">
+                                    <div className="input-group name-section" style={{
+                                        borderTop: "1px solid black",
+                                    }}>
                                         <div className="input-box">
                                             <label htmlFor="">First Name <span className="star" style={{ color: "red" }}>*</span></label>
-                                            <input type="text" id="firstName" />
+                                            <input type="text" value={passengerDetails[index].firstName} onChange={e => handleInputChange(index, 'firstName', e.target.value)} id="firstName" />
                                         </div>
                                         <div className="input-box">
-                                            <label htmlFor="">Middle Name <span className="star" style={{ color: "red" }}>*</span></label>
-                                            <input type="text" id="middleName" />
+                                            <label htmlFor="">Middle Name</label>
+                                            <input type="text" value={passengerDetails[index].middleName} onChange={e => handleInputChange(index, 'middleName', e.target.value)} id="middleName" />
                                         </div>
                                         <div className="input-box">
                                             <label htmlFor="">Last Name <span className="star" style={{ color: "red" }}>*</span></label>
-                                            <input type="text" id="lastName" />
+                                            <input type="text" value={passengerDetails[index].lastName} onChange={e => handleInputChange(index, 'lastName', e.target.value)} id="lastName" />
                                         </div>
                                     </div>
                                     <div className="input-group contact-section">
                                         <div className="input-box">
                                             <label htmlFor="">Email <span className="star" style={{ color: "red" }}>*</span></label>
-                                            <input type="email" id="email" />
-                                            <MdOutlineMail className="icon" />
+                                            <input type="email" value={passengerDetails[index].email} onChange={e => handleInputChange(index, 'email', e.target.value)} id="email" />
                                         </div>
                                         <div className="input-box">
                                             <label htmlFor="">Contact <span className="star" style={{ color: "red" }}>*</span></label>
-                                            <input type="text" id="contact" />
-                                            <FiPhoneCall className="icon" />
+                                            <input type="text" value={passengerDetails[index].contact} onChange={e => handleInputChange(index, 'contact', e.target.value)} id="phone" />
                                         </div>
                                     </div>
                                     <div className="input-group demographic-section">
@@ -190,7 +210,9 @@ const Reservation = () => {
                                 </div>
                             ))
                         }
+
                         <div className="input-group card-section">
+
                             <div className="card-meta-1">
                                 <div className="input-box">
                                     <label htmlFor="">Card Number <span className="star" style={{ color: "red" }}>*</span></label>
@@ -202,7 +224,10 @@ const Reservation = () => {
                                 </div>
                             </div>
                             <div className="card-meta-2">
-                                <label htmlFor="">Expiry Date</label>
+                                <label htmlFor="" style={{
+                                    fontWeight: "bold",
+
+                                }}>Expiry Date</label>
                                 <div className="dropDownGroup">
                                     <div className="dropdown-item">
                                         <label htmlFor="year">Year <span className="star" style={{ color: "red" }}>*</span></label>
@@ -225,10 +250,8 @@ const Reservation = () => {
                                         </select>
                                     </div>
                                     <div className="dropdown-item">
-                                        <div className="input-box">
-                                            <label htmlFor="">CVV <span className="star" style={{ color: "red" }}>*</span></label>
-                                            <input type="text" id="cvv" />
-                                        </div>
+                                        <label htmlFor="">CVV <span className="star" style={{ color: "red" }}>*</span></label>
+                                        <input type="text" id="cvv" />
                                     </div>
                                     <div className="dropdown-item cardType">
                                         <label htmlFor="month">Card Type <span className="star" style={{ color: "red" }}>*</span></label>
@@ -246,9 +269,9 @@ const Reservation = () => {
                                     <div className="dropdown-item country">
                                         <label htmlFor="" style={{ fontWeight: "bold" }}>Country <span className="star" style={{ color: "red" }}>*</span></label>
                                         <select name="country" id="countrySelect">
-                                            <option value="Bangladesh">Bangladesh</option>
-                                            <option value="India">India</option>
-                                            <option value="Pakistan">Pakistan</option>
+                                            {countries.map((country, index) => (
+                                                <option key={index} value={country}>{country}</option>
+                                            ))}
                                         </select>
                                     </div>
                                     <div className="grid-bi">
@@ -292,54 +315,56 @@ const Reservation = () => {
                                         <p>{price.symbol}{price.grandTotal}</p>
                                     </div>
                                     {
-                                        flightSegments.segments.map((segment, index) => (
-                                            <div className="segmentContainer" key={index}>
-                                                <div className="carrier-info" >
-                                                    <div className="carrier">
-                                                        <img src={`https://images.kiwi.com/airlines/64/${segment.carrierCode}.png`} alt={segment.carrierCode} />
-                                                        <div className="signature">
-                                                            <h3>{dictionaries.carriers[segment.carrierCode]}</h3>
-                                                            <p>{dictionaries.aircraft[segment.aircraft.code]}</p>
+                                        flightSegments.itineraries.map((itinerary, index) => (
+                                            itinerary.segments.map((segment, index) => (
+                                                <div className="segmentContainer" key={index}>
+                                                    <div className="carrier-info" >
+                                                        <div className="carrier">
+                                                            <img src={`https://images.kiwi.com/airlines/64/${segment.carrierCode}.png`} alt={segment.carrierCode} />
+                                                            <div className="signature">
+                                                                <h3>{dictionaries.carriers[segment.carrierCode]}</h3>
+                                                                <p>{dictionaries.aircraft[segment.aircraft.code]}</p>
+                                                            </div>
+                                                        </div>
+                                                        <div className="travel-comfort">
+                                                            {segment.numberOfStops === 0 ? <p className="stopOver" style={{ color: "rgb(0, 194, 97)" }}>Direct</p> : <p className="stopOver" style={{ color: "orange" }}>{segment.numberOfStops} stop</p>}
+                                                            {<p className="duration">{
+                                                                segment.duration.split('T')[1].split('H')[0] + ` ${segment.duration.split('T')[1].split('H')[0] > 9 ? 'Hours' : 'Hour'}` + ' ' + segment.duration.split('T')[1].split('H')[1].split('M')[0] + `${segment.duration.split('T')[1].split('H')[1].split('M')[0] > 9 ? ' Minutes' : ' Minute'}`
+                                                            }</p>}
                                                         </div>
                                                     </div>
-                                                    <div className="travel-comfort">
-                                                        {segment.numberOfStops === 0 ? <p className="stopOver" style={{ color: "rgb(0, 194, 97)" }}>Direct</p> : <p className="stopOver" style={{ color: "orange" }}>{segment.numberOfStops} stop</p>}
-                                                        {<p className="duration">{
-                                                            segment.duration.split('T')[1].split('H')[0] + ` ${segment.duration.split('T')[1].split('H')[0] > 9 ? 'Hours' : 'Hour'}` + ' ' + segment.duration.split('T')[1].split('H')[1].split('M')[0] + `${segment.duration.split('T')[1].split('H')[1].split('M')[0] > 9 ? ' Minutes' : ' Minute'}`
-                                                        }</p>}
+                                                    <div className="destinations">
+                                                        <div className="departure-info">
+                                                            <h3 className="iataCode">{segment.departure.iataCode}</h3>
+                                                            <p className="departure-date date">{`${new Date(segment.departure.at).getDate()}
+                                                        ${new Date(segment.departure.at).toLocaleString('default', { month: 'short' })},
+                                                        ${new Date(segment.departure.at).getFullYear()}`}</p>
+                                                            <p className="departure-time time">{segment.departure.at.split('T')[1].split(':')[0] + ':' + segment.departure.at.split('T')[1].split(':')[1]}</p>
+                                                        </div>
+                                                        <div className="visual">
+                                                            <div className="line"></div>
+                                                            <MdFlight className="icon" />
+                                                        </div>
+                                                        <div className="arrival-info">
+                                                            <h3 className="iataCode">{segment.arrival.iataCode}</h3>
+                                                            <p className="arrival-date date">{`${new Date(segment.arrival.at).getDate()}
+                                                        ${new Date(segment.arrival.at).toLocaleString('default', { month: 'short' })},
+                                                        ${new Date(segment.arrival.at).getFullYear()}`}</p>
+                                                            <p className="arrival-time time">{segment.arrival.at.split('T')[1].split(':')[0] + ':' + segment.arrival.at.split('T')[1].split(':')[1]}</p>
+                                                        </div>
+                                                    </div>
+                                                    <div className="features">
+                                                        <div className="cabinType feature">{metaData.flight.data.flightOffers[0].travelerPricings[0].fareDetailsBySegment[index].cabin}</div>
+                                                        <div className="circle"></div>
+                                                        <div className="classType feature">CLASS {metaData.flight.data.flightOffers[0].travelerPricings[0].fareDetailsBySegment[index].class}</div>
+                                                        <div className="circle"></div>
+                                                        <div className="fareType feature">{metaData.flight.data.flightOffers[0].travelerPricings[0].fareDetailsBySegment[index].fareBasis}</div>
+                                                        <div className="circle"></div>
+                                                        <div className="baggage feature">CHECKIN {`${metaData.flight.data.flightOffers[0].travelerPricings[0].fareDetailsBySegment[index].includedCheckedBags.quantity} x ${metaData.flight.data.flightOffers[0].travelerPricings[0].fareDetailsBySegment[index].includedCheckedBags.weight ? metaData.flight.data.flightOffers[0].travelerPricings[0].fareDetailsBySegment[index].includedCheckedBags.weight : '0'} kg`}
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div className="destinations">
-                                                    <div className="departure-info">
-                                                        <h3 className="iataCode">{segment.departure.iataCode}</h3>
-                                                        <p className="departure-date date">{`${new Date(segment.departure.at).getDate()}
-                                                    ${new Date(segment.departure.at).toLocaleString('default', { month: 'short' })},
-                                                    ${new Date(segment.departure.at).getFullYear()}`}</p>
-                                                        <p className="departure-time time">{segment.departure.at.split('T')[1].split(':')[0] + ':' + segment.departure.at.split('T')[1].split(':')[1]}</p>
-                                                    </div>
-                                                    <div className="visual">
-                                                        <div className="line"></div>
-                                                        <MdFlight className="icon" />
-                                                    </div>
-                                                    <div className="arrival-info">
-                                                        <h3 className="iataCode">{segment.arrival.iataCode}</h3>
-                                                        <p className="arrival-date date">{`${new Date(segment.arrival.at).getDate()}
-                                                    ${new Date(segment.arrival.at).toLocaleString('default', { month: 'short' })},
-                                                    ${new Date(segment.arrival.at).getFullYear()}`}</p>
-                                                        <p className="arrival-time time">{segment.arrival.at.split('T')[1].split(':')[0] + ':' + segment.arrival.at.split('T')[1].split(':')[1]}</p>
-                                                    </div>
-                                                </div>
-                                                <div className="features">
-                                                    <div className="cabinType feature">{metaData.flight.data.flightOffers[0].travelerPricings[0].fareDetailsBySegment[index].cabin}</div>
-                                                    <div className="circle"></div>
-                                                    <div className="classType feature">CLASS {metaData.flight.data.flightOffers[0].travelerPricings[0].fareDetailsBySegment[index].class}</div>
-                                                    <div className="circle"></div>
-                                                    <div className="fareType feature">{metaData.flight.data.flightOffers[0].travelerPricings[0].fareDetailsBySegment[index].fareBasis}</div>
-                                                    <div className="circle"></div>
-                                                    <div className="baggage feature">CHECKIN {`${metaData.flight.data.flightOffers[0].travelerPricings[0].fareDetailsBySegment[index].includedCheckedBags.quantity} x ${metaData.flight.data.flightOffers[0].travelerPricings[0].fareDetailsBySegment[index].includedCheckedBags.weight ? metaData.flight.data.flightOffers[0].travelerPricings[0].fareDetailsBySegment[index].includedCheckedBags.weight : '0' } kg`}
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            ))
                                         ))
                                     }
                                     <button className="confirmBtn" onClick={handleOnClick}>Confirm booking</button>

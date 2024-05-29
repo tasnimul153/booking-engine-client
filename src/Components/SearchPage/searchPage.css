@@ -458,9 +458,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  border: 1px solid rgba(71, 71, 71, 0.164);
+  border: 1px solid rgba(71, 71, 71, 0.15);
   background-color: #ffffff;
-  border-radius: 2px;
+  border-radius: 5px;
 }
 .Container .searched-flights-container .controller .controller-container .filter-flights {
   padding-top: 10px;
@@ -469,17 +469,23 @@ body {
   color: rgb(48, 48, 48);
 }
 .Container .searched-flights-container .controller .controller-container .filter-flights .ct-title {
-  font-size: 18px;
+  font-size: 16px;
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
   color: rgb(0, 0, 0);
   margin: 10px 0px 10px 20px;
 }
 .Container .searched-flights-container .controller .controller-container .filter-flights .flight-count {
-  font-size: 18px;
-  font-weight: 400;
-  font-family: "Open Sans", sans-serif;
-  color: rgba(0, 0, 0, 0.7);
+  font-size: 8px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(94, 158, 255);
+  color: white;
+  padding: 0px 5px;
+  position: relative;
+  left: -6px;
+  bottom: 8px;
+  border-radius: 50%;
 }
 .Container .searched-flights-container .controller .controller-container .filter-flights .flight-filter-box {
   padding: 10px 20px;
@@ -489,6 +495,7 @@ body {
   flex-direction: row;
   padding-bottom: 5px;
   justify-content: start;
+  font-size: 13px;
   gap: 10px;
 }
 .Container .searched-flights-container .controller .controller-container .filter-flights .flight-filter-box .carrier input {
@@ -498,19 +505,19 @@ body {
   margin-top: 10px;
   width: 100%;
   background-color: #ffffff;
-  border: 1px solid rgba(71, 71, 71, 0.123);
+  border: 1px solid rgba(71, 71, 71, 0.15);
   padding: 10px 20px;
-  border-radius: 2px;
+  border-radius: 5px;
 }
 .Container .searched-flights-container .controller .sort-by-price-container .sp-title {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 15px;
   font-family: "Open Sans", sans-serif;
+  font-weight: 600;
   color: rgb(0, 0, 0);
-  margin-bottom: 10px;
+  margin: 10px 0px 10px 0px;
 }
 .Container .searched-flights-container .controller .sort-by-price-container .radio-sort {
-  font-size: 14px;
+  font-size: 13px;
   display: flex;
   flex-direction: row;
   justify-content: start;
@@ -798,9 +805,16 @@ body {
     margin: 10px 0px 10px 20px;
   }
   .Container .searched-flights-container .controller .controller-container .filter-flights .flight-count {
-    font-size: 15px;
+    font-size: 8px;
     font-weight: 500;
-    color: rgba(0, 0, 0, 0.5);
+    font-family: "Poppins", sans-serif;
+    background-color: rgb(94, 158, 255);
+    color: white;
+    padding: 0px 5px;
+    position: relative;
+    left: -6px;
+    bottom: 8px;
+    border-radius: 50%;
   }
   .Container .searched-flights-container .controller .controller-container .filter-flights .flight-filter-box {
     padding: 10px 20px;

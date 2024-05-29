@@ -19,6 +19,7 @@ import image2 from '../../Assets/BackgroundHomePage2.jpg';
 import image1 from '../../Assets/BackgroundHomePage1.jpg';
 import image3 from '../../Assets/BackgroundHomePage3.jpg';
 import image4 from '../../Assets/BackgroundHomePage4.jpg';
+import flight from '../../Assets/plane.jpg';
 
 import dealImg1 from '../../Assets/deals_images/dealImg1.jpg';
 import dealImg2 from '../../Assets/deals_images/dealImg2.jpg';
@@ -26,9 +27,8 @@ import dealImg3 from '../../Assets/deals_images/dealImg3.jpg';
 import dealImg4 from '../../Assets/deals_images/dealImg4.jpg';
 import dealImg5 from '../../Assets/deals_images/dealImg5.jpg';
 import dealImg6 from '../../Assets/deals_images/dealImg6.jpg';
-
-import mockup from '../../Assets/mockup.png';
-import playButton from '../../Assets/playbutton.png';
+import './temp.css';
+import Footer from '../Footer/Footer';
 
 const Home = () => {
 
@@ -73,32 +73,6 @@ const Home = () => {
 
     // Get nearest airports
     const nearestAirports = NearestAirports(accessToken);
-
-    const [style, setStyle] = useState("");
-
-    useEffect(() => {
-        fetch(`${process.env.REACT_APP_BACKEND_URL}/ticketStyleDefault`)
-            .then((response) => response.json())
-            .then(data => {
-                setStyle(data.css);
-                const styleId = 'dynamic-ticket-style';
-                let styleSheet = document.getElementById(styleId);
-
-                if (!styleSheet) {
-                    // If the style element doesn't exist, create it and append to head
-                    styleSheet = document.createElement("style");
-                    styleSheet.id = styleId;  // Set an ID for the style element to reference it later
-                    document.head.appendChild(styleSheet);
-                }
-
-                // Set or replace the content of the style sheet
-                styleSheet.innerText = data.css;
-                console.log("Styles applied:", data.css);
-            })
-            .catch((error) => {
-                console.error('Error fetching ticket style:', error);
-            });
-    }, []);
 
     useEffect(() => {
         if (nearestAirports.length > 0) {
@@ -213,7 +187,6 @@ const Home = () => {
                             <FaChevronLeft className='icon' onClick={handleLeftArrowClick} />
                             <FaChevronRight className='icon' onClick={handleRightArrowClick} />
                         </div>
-                        <div className='overlay2'></div>
                         <div className='overlay3'></div>
                         <div className='overlay4'></div>
                         {
@@ -297,51 +270,50 @@ const Home = () => {
                     </div>
                 </section>
                 <div className='content-container'>
-                    <div className='mobile-app-container'>
-                        <div className='text-content'>
-                            <h2>Mobile app comming soon</h2>
-                            <p>We're excited to announce our upcoming mobile app, currently in development to enhance your experience with our services directly from your mobile device. Offering convenience and a seamless user experience, our app aims to revolutionize how you interact with us. Below is a preview of our app mockup. Stay tuned for the official launch and further updates. Get ready for a new level of engagement with our innovative mobile solution.
-                                <Link to="/">
-                                    <span style={{
-                                        color: 'blue',
-                                        cursor: 'pointer'
-
-                                    }} onClick={() => alert("Coming soon")}> Learn more</span>
-                                </Link>
+                    <div className='deal-card'>
+                        <div className="leftBox">
+                            <h2>A-1 Travel & Tours is proud to announce the 25th anniversary</h2>
+                            <p>
+                                For 25 years, A-1 Travel & Tours has been dedicated to providing the best travel
+                                experiences to our customers. We are proud to celebrate our 25th anniversary with you,
+                                our loyal customers. Our success story remains incomplete without the support
+                                of our clients and customers.
                             </p>
-                            <img src={playButton} alt="download from playstore, appstore or amazon appstore" />
+                            <button className='advertBtn'>Our Story</button>
                         </div>
-                        <img src={mockup} alt="Mobile App" />
+                        <div className="rightBox">
+                            <img src={image4} alt="" />
+                        </div>
                     </div>
                     <div className='deals-container'>
                         <h2>Latest deals on A-1 Travel and Tours</h2>
                         <div className='deals'>
                             <div className='deal1 deal'>
                                 <img src={dealImg4} alt="" />
-                                <h3>Fly to Miami for ${parseInt(firstDeal) === 0 ? 'cheap price' : parseInt(firstDeal)}</h3>
-                                <p>Discover Miami's beaches and nightlife with our exclusive one-time offer: fly from {nearestAirports.length == 0 || nearestAirports[0].address.cityName === "MIAMI" ? 'anywhere' : nearestAirports[0].address.cityName} to MIAMI for ${parseInt(firstDeal) === 0 ? 'cheap price' : parseInt(firstDeal)}—book now and embrace the sun.</p>
+                                <h3>Fly to Miami {parseInt(firstDeal) === 0 ? '' : 'for $' + parseInt(firstDeal)}</h3>
+                                <p>Discover Miami's beaches and nightlife with our exclusive one-time offer: fly from {nearestAirports.length == 0 || nearestAirports[0].address.cityName === "MIAMI" ? 'anywhere' : nearestAirports[0].address.cityName} to MIAMI for {parseInt(firstDeal) === 0 ? 'cheap price' : '$' + parseInt(firstDeal)}—book now and embrace the sun.</p>
                                 <Link to="/">
                                     <span onClick={() => alert("Coming soon")}>Learn more</span>
                                 </Link>
                             </div>
                             <div className='deal2 deal'>
                                 <img src={dealImg5} alt="" />
-                                <h3>New York Bound for ${parseInt(secondDeal) === 0 ? 'cheap price' : parseInt(secondDeal)}</h3>
-                                <p>Explore the Big Apple's iconic sights and vibrant culture with our special offer: fly from {nearestAirports.length == 0 || nearestAirports[0].address.cityName === "NEW YORK" ? 'anywhere' : nearestAirports[0].address.cityName} to NYC for only ${parseInt(secondDeal) === 0 ? 'cheap price' : parseInt(secondDeal)}. Seize this chance to experience New York City like never before.</p>
+                                <h3>New York Bound {parseInt(secondDeal) == 0 ? '' : 'for $' + parseInt(secondDeal)}</h3>
+                                <p>Explore the Big Apple's iconic sights and vibrant culture with our special offer: fly from {nearestAirports.length == 0 || nearestAirports[0].address.cityName === "NEW YORK" ? 'anywhere' : nearestAirports[0].address.cityName} to NYC for only {parseInt(secondDeal) === 0 ? 'cheap price' : '$' + parseInt(secondDeal)}. Seize this chance to experience New York City like never before.</p>
                                 <Link to="/">
                                     <span onClick={() => alert("Coming soon")}>Learn more</span>
                                 </Link>
                             </div>
                             <div className='deal3 deal'>
                                 <img src={dealImg6} alt="" />
-                                <h3>California Dreams for ${parseInt(thirdDeal) === 0 ? 'cheap price' : parseInt(thirdDeal)}</h3>
-                                <p>Jet off to the Golden State! Our limited offer lets you fly from {nearestAirports.length == 0 || nearestAirports[0].address.cityName === "SAN FRANCISCO" ? 'anywhere' : nearestAirports[0].address.cityName} to California for just ${parseInt(thirdDeal) === 0 ? 'cheap price' : parseInt(thirdDeal)}. Grab this opportunity to explore California's stunning landscapes and dynamic cities.</p>
+                                <h3>California Dreams {parseInt(thirdDeal) === 0 ? '' : 'for $' + parseInt(thirdDeal)}</h3>
+                                <p>Jet off to the Golden State! Our limited offer lets you fly from {nearestAirports.length == 0 || nearestAirports[0].address.cityName === "SAN FRANCISCO" ? 'anywhere' : nearestAirports[0].address.cityName} to California for just {parseInt(thirdDeal) === 0 ? 'cheap price' : '$' + parseInt(thirdDeal)}. Grab this opportunity to explore California's stunning landscapes and dynamic cities.</p>
                                 <Link to="/">
                                     <span onClick={() => alert("Coming soon")}>Learn more</span>
                                 </Link>
                             </div>
                         </div>
-                        <h2 style={{marginTop: "50px"}}>Your travel getaway</h2>
+                        <h2 style={{ marginTop: "50px" }}>Your travel getaway</h2>
                         <div className='deals'>
                             <div className='deal1 deal'>
                                 <img src={dealImg1} alt="" />
@@ -369,58 +341,8 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-
                 </div>
-                <div className='footer'>
-                    <div className='footer-content'>
-                        <div className='footer-section'>
-                            <h3>Company</h3>
-                            <ul>
-                                <li>About us</li>
-                                <li>Press</li>
-                                <li>Investors</li>
-                                <li>Partners</li>
-                                <li>Blog</li>
-                            </ul>
-                        </div>
-                        <div className='footer-section'>
-                            <h3>Support</h3>
-                            <ul>
-                                <li>Contact us</li>
-                                <li>FAQs</li>
-                                <li>Privacy policy</li>
-                                <li>Terms of use</li>
-                                <li>Accessibility</li>
-                            </ul>
-                        </div>
-                        <div className='footer-section'>
-                            <h3>Services</h3>
-                            <ul>
-                                <li>Flights</li>
-                                <li>Hotels</li>
-                                <li>Cars</li>
-                                <li>Deals</li>
-                                <li>Travel guides</li>
-                            </ul>
-                        </div>
-                        <div className='footer-section'>
-                            <h3>Connect</h3>
-                            <ul>
-                                <li>Facebook</li>
-                                <li>Twitter</li>
-                                <li>Instagram</li>
-                                <li>LinkedIn</li>
-                                <li>Youtube</li>
-                            </ul>
-                        </div>
-                        <div className='footer-section'>
-                            <h3>Newsletter</h3>
-                            <p>Subscribe to our newsletter for the latest updates on our services, deals, and more.</p>
-                            <input type="email" placeholder="Enter your email" />
-                            <button onClick={() => alert("Coming Soon")}>Subscribe</button>
-                        </div>
-                    </div>
-                </div>
+                <Footer />
             </div>
 
         </>

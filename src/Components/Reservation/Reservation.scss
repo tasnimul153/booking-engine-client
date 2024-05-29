@@ -1,4 +1,4 @@
-$PrimaryThemeColor: rgb(0, 46, 133);
+$PrimaryThemeColor: rgb(0, 0, 0);
 $carrier-model-color: rgba(61, 61, 61, 0.729);
 $SecondaryThemeColor: rgba(0, 40, 116, 0.411);
 
@@ -21,10 +21,14 @@ body {
         height: 100%;
         margin: 0 auto;
 
-        h3 {
-            font-size: 40px;
-            font-weight: 100;
+        .title {
+            font-size: 20px;
+            font-weight: 500;
             color: $PrimaryThemeColor;
+            font-family: 'Open Sans', sans-serif;
+            padding-bottom: 15px;
+            padding-top: 15px;
+            padding-left: 20px;
         }
 
         .display-details {
@@ -37,17 +41,18 @@ body {
                 width: 50%;
                 height: 100%;
                 padding-right: 20px;
-                border-right: 1px solid rgba(48, 48, 48, 0.151);
 
                 .each-customer {
                     margin-bottom: 30px;
-                    border-bottom: 1px solid rgba(48, 48, 48, 0.151);
                     padding-bottom: 20px;
+                    border: 1px solid rgba(48, 48, 48, 0.151);
+                    border-radius: 5px;
 
                     .passenger-number-label {
-                        font-size: 20px;
+                        font-size: 15px;
+                        font-family: 'Open Sans', sans-serif;
                         color: $PrimaryThemeColor;
-                        margin-bottom: 2px;
+                        padding: 10px;
                         font-weight: 600;
                     }
                 }
@@ -60,22 +65,26 @@ body {
                         display: flex;
                         flex-direction: column;
                         width: 90%;
+                        padding: 10px;
 
                         label {
-                            font-size: 15px;
+                            font-size: 12px;
                             color: $PrimaryThemeColor;
                             margin-bottom: 2px;
+                            font-family: 'Open Sans', sans-serif;
                             font-weight: 600;
                         }
 
                         input {
                             width: 100%;
                             height: 30px;
-                            border: 1px solid $SecondaryThemeColor;
+                            border: none;
+                            border-bottom: 1px solid $SecondaryThemeColor;
                             padding: 0 10px;
-                            font-size: 15px;
-                            font-weight: 100;
-                            color: $PrimaryThemeColor;
+                            font-family: 'Open Sans', sans-serif;
+                            font-size: 12px;
+                            font-weight: 400;
+                            color: black;
 
                             &:focus {
                                 outline: none;
@@ -104,11 +113,10 @@ body {
                         input[type="text"] {
                             width: 100%;
                             height: 30px;
-                            border: 1px solid $SecondaryThemeColor;
+                            border-bottom: 1px solid $SecondaryThemeColor;
                             border-left: none;
-                            padding: 0 10px 0 35px;
+                            padding: 0 10px 0 5px;
                             font-size: 15px;
-                            letter-spacing: 2px;
                             font-weight: 500;
                             color: $PrimaryThemeColor;
 
@@ -209,22 +217,24 @@ body {
                     flex-direction: column;
                     justify-content: space-between;
                     padding: 20px;
-                    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
                     margin-top: 30px;
-                    background-color: rgba(255, 234, 163, 0.24);
+                    border-radius: 5px;
+                    font-size: 12px;
+                    border: 1px solid rgba(24, 24, 24, 0.185);
 
                     .input-box {
                         width: 100%;
 
                         label {
                             display: block;
-                            font-size: 14px;
+                            font-size: 12px;
                             color: #333;
                             margin-bottom: 5px;
                         }
 
                         input[type="text"] {
                             width: 100%;
+                            font-size: 12px;
                             padding: 10px;
                             border: 1px solid #ccc;
                             border-radius: 5px;
@@ -259,12 +269,11 @@ body {
                         flex-direction: row;
                         justify-content: space-between;
                         margin-top: 20px;
-                        gap: 20px;
 
                         .input-box {
                             label {
                                 display: block;
-                                font-size: 14px;
+                                font-size: 12px;
                                 color: #333;
                                 margin-bottom: 5px;
                             }
@@ -275,6 +284,16 @@ body {
                                 border: 1px solid #ccc;
                                 border-radius: 5px;
                             }
+                        }
+                    }
+
+                    .card-meta-2 {
+                        .dropDownGroup {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            margin-top: 20px;
+                            gap: 20px;
                         }
                     }
 
@@ -290,7 +309,7 @@ body {
 
                                 label {
                                     display: block;
-                                    font-size: 14px;
+                                    font-size: 12px;
                                     color: #333;
                                     margin-bottom: 5px;
                                 }
@@ -432,6 +451,7 @@ body {
 
                                     .travel-comfort {
                                         font-size: 12px;
+
                                         .stopOver {
                                             padding: 0;
                                             font-size: 15px;
@@ -449,14 +469,17 @@ body {
                                     display: flex;
                                     flex-direction: row;
                                     justify-content: space-between;
-                                    
-                                    .departure-info, .arrival-info {
+
+                                    .departure-info,
+                                    .arrival-info {
                                         .iataCode {
                                             font-size: 40px;
                                             font-weight: 500;
                                             color: black;
                                         }
-                                        .date, .time {
+
+                                        .date,
+                                        .time {
                                             font-size: 15px;
                                             font-weight: 400;
                                         }
@@ -468,6 +491,7 @@ body {
 
                                     .visual {
                                         width: 30%;
+
                                         .line {
                                             width: 100%;
                                             height: 10px;
@@ -475,6 +499,7 @@ body {
                                             margin-top: 40px;
                                             border-bottom: 1px solid $PrimaryThemeColor;
                                         }
+
                                         .icon {
                                             font-size: 20px;
                                             color: $PrimaryThemeColor;
@@ -499,6 +524,7 @@ body {
                                     color: rgba(26, 26, 26, 0.733);
                                     margin-top: 30px;
                                     border-bottom: 1px solid rgba(48, 48, 48, 0.14);
+
                                     .circle {
                                         width: 5px;
                                         height: 5px;
@@ -508,6 +534,7 @@ body {
 
                                     .feature {
                                         font-weight: 500;
+
                                         .icon {
                                             font-size: 10px;
                                         }
@@ -538,32 +565,32 @@ body {
     }
 }
 
-@media screen and (max-width: 1250px){
+@media screen and (max-width: 1250px) {
     .container-reservation {
-        
+
         .final-details {
-    
+
             h3 {
                 font-size: 30px;
                 font-weight: 100;
                 color: $PrimaryThemeColor;
             }
-    
+
             .display-details {
-    
+
                 .booking-details {
-    
+
                     .information-container {
                         padding: 20px;
-    
+
                         .flight-detail-container {
-    
+
                             .flightDetails {
-    
+
                                 .priceDisplay {
                                     font-size: 15px;
                                 }
-    
+
                                 .segmentContainer {
                                     border: none;
                                     padding: 0;
@@ -571,19 +598,19 @@ body {
                                     width: 100%;
                                     height: fit-content;
                                     margin-bottom: 20px;
-    
+
                                     .carrier-info {
                                         display: flex;
                                         flex-direction: row;
                                         justify-content: space-between;
                                         padding: 20px 0px;
-    
+
                                         .carrier {
                                             display: flex;
                                             flex-direction: row;
                                             gap: 20px;
                                             align-items: center;
-    
+
                                             img {
                                                 width: 30px;
                                                 height: 30px;
@@ -594,22 +621,23 @@ body {
                                                 font-size: 20px;
                                                 border: 1px solid rgba(0, 0, 0, 0.253);
                                             }
-    
+
                                             .signature {
                                                 h3 {
                                                     font-size: 12px;
                                                     color: $PrimaryThemeColor;
                                                 }
-    
+
                                                 p {
                                                     font-size: 10px;
                                                     color: $carrier-model-color;
                                                 }
                                             }
                                         }
-    
+
                                         .travel-comfort {
                                             font-size: 10px;
+
                                             .stopOver {
                                                 padding: 0;
                                                 font-size: 12px;
@@ -617,7 +645,7 @@ body {
                                             }
                                         }
                                     }
-    
+
                                     .destinations {
                                         border: none;
                                         padding: 0;
@@ -627,24 +655,27 @@ body {
                                         display: flex;
                                         flex-direction: row;
                                         justify-content: space-between;
-                                        
-                                        .departure-info, .arrival-info {
+
+                                        .departure-info,
+                                        .arrival-info {
                                             .iataCode {
                                                 font-size: 30px;
                                                 font-weight: 500;
                                                 color: black;
                                             }
-                                            .date, .time {
+
+                                            .date,
+                                            .time {
                                                 font-size: 12px;
                                                 font-weight: 400;
                                             }
                                         }
-    
+
                                         .arrival-info {
                                             text-align: right;
                                         }
                                     }
-    
+
                                     .features {
                                         display: flex;
                                         flex-direction: row;
@@ -656,26 +687,28 @@ body {
                                         color: rgba(26, 26, 26, 0.733);
                                         margin-top: 30px;
                                         border-bottom: 1px solid rgba(48, 48, 48, 0.14);
+
                                         .circle {
                                             width: 5px;
                                             height: 5px;
                                             border-radius: 50%;
                                             background-color: rgba(48, 48, 48, 0.384);
                                         }
-    
+
                                         .feature {
                                             font-weight: 500;
+
                                             .icon {
                                                 font-size: 8px;
                                             }
                                         }
                                     }
                                 }
-    
+
                                 .segmentContainer:last-child {
                                     border-bottom: none;
                                 }
-    
+
                                 .confirmBtn {
                                     width: 150px;
                                     background-color: rgb(19, 129, 255);
@@ -696,41 +729,41 @@ body {
     }
 }
 
-@media screen and (max-width: 1220px){
+@media screen and (max-width: 1220px) {
     .container-reservation {
         width: 100vw;
         height: max-content;
         padding: 0 30px;
         background-color: white;
-    
+
         .final-details {
             padding-top: 80px;
             width: 80%;
             height: 100%;
             margin: 0 auto;
-    
+
             h3 {
                 font-size: 30px;
                 font-weight: 100;
                 color: $PrimaryThemeColor;
             }
-    
+
             .display-details {
                 padding: 30px 0px;
                 display: flex;
                 justify-content: space-between;
                 flex-direction: column;
-    
+
                 .customer-inputs {
                     width: 100%;
                     height: 100%;
                     border: none;
-    
+
                     .each-customer {
                         margin-bottom: 30px;
                         border-bottom: 1px solid rgba(48, 48, 48, 0.151);
                         padding-bottom: 20px;
-    
+
                         .passenger-number-label {
                             font-size: 20px;
                             color: $PrimaryThemeColor;
@@ -738,23 +771,23 @@ body {
                             font-weight: 600;
                         }
                     }
-    
+
                     .input-group {
                         height: fit-content;
                         gap: 30px;
-    
+
                         .input-box {
                             display: flex;
                             flex-direction: column;
                             width: 90%;
-    
+
                             label {
                                 font-size: 15px;
                                 color: $PrimaryThemeColor;
                                 margin-bottom: 2px;
                                 font-weight: 600;
                             }
-    
+
                             input {
                                 width: 100%;
                                 height: 30px;
@@ -763,30 +796,30 @@ body {
                                 font-size: 15px;
                                 font-weight: 100;
                                 color: $PrimaryThemeColor;
-    
+
                                 &:focus {
                                     outline: none;
                                 }
                             }
                         }
                     }
-    
+
                     .name-section {
                         width: 100%;
                         display: flex;
                         flex-direction: row;
                         justify-content: space-between;
                     }
-    
+
                     .contact-section {
                         width: 100%;
                         display: flex;
                         flex-direction: row;
                         justify-content: space-between;
                         margin-bottom: 10px;
-    
+
                         .input-box {
-    
+
                             input[type="email"],
                             input[type="text"] {
                                 width: 100%;
@@ -798,12 +831,12 @@ body {
                                 letter-spacing: 2px;
                                 font-weight: 500;
                                 color: $PrimaryThemeColor;
-    
+
                                 &:focus {
                                     outline: none;
                                 }
                             }
-    
+
                             .icon {
                                 width: 30px;
                                 height: 30px;
@@ -817,13 +850,13 @@ body {
                             }
                         }
                     }
-    
+
                     .name-section,
                     .contact-section {
                         //background-color: rgba(255, 234, 163, 0.24);
                         padding: 20px 20px 0px 20px;
                     }
-    
+
                     .demographic-section {
                         width: 100%;
                         display: flex;
@@ -831,30 +864,30 @@ body {
                         margin-top: 20px;
                         justify-content: space-between;
                         padding: 20px 20px 0px 20px;
-    
+
                         .input-box {
                             input[type="text"] {
                                 border: none;
                                 border-bottom: 1px solid $SecondaryThemeColor;
                             }
-    
+
                             .dropDownGroup {
                                 display: flex;
                                 flex-direction: row;
                                 justify-content: space-between;
-    
+
                                 .dropdown-item {
                                     display: flex;
                                     width: 50%;
                                     flex-direction: column;
-    
+
                                     label {
                                         font-size: 12px;
                                         color: $PrimaryThemeColor;
                                         margin-bottom: 2px;
                                         font-weight: 600;
                                     }
-    
+
                                     select {
                                         width: 100%;
                                         height: 30px;
@@ -863,33 +896,33 @@ body {
                                         font-size: 15px;
                                         font-weight: 100;
                                         color: $PrimaryThemeColor;
-    
+
                                         &:focus {
                                             outline: none;
                                         }
                                     }
-    
+
                                     &:focus {
                                         outline: none;
                                     }
                                 }
                             }
-    
+
                             select[name="gender"] {
                                 border: none;
                                 margin-top: 25px;
                                 border-bottom: 1px solid $SecondaryThemeColor;
                                 font-size: 15px;
                                 color: $PrimaryThemeColor;
-    
+
                                 &:focus {
                                     outline: none;
                                 }
                             }
                         }
                     }
-    
-    
+
+
                     .card-section {
                         width: 100%;
                         display: flex;
@@ -899,38 +932,38 @@ body {
                         box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
                         margin-top: 30px;
                         background-color: rgba(255, 234, 163, 0.24);
-    
+
                         .input-box {
                             width: 100%;
-    
+
                             label {
                                 display: block;
                                 font-size: 14px;
                                 color: #333;
                                 margin-bottom: 5px;
                             }
-    
+
                             input[type="text"] {
                                 width: 100%;
                                 padding: 10px;
                                 border: 1px solid #ccc;
                                 border-radius: 5px;
                             }
-    
+
                             .dropDownGroup {
                                 display: flex;
                                 justify-content: space-between;
-    
+
                                 .dropdown-item {
                                     width: 45%;
-    
+
                                     label {
                                         display: block;
                                         font-size: 14px;
                                         color: #333;
                                         margin-bottom: 5px;
                                     }
-    
+
                                     select {
                                         width: 100%;
                                         padding: 10px;
@@ -940,14 +973,14 @@ body {
                                 }
                             }
                         }
-    
+
                         .card-meta-1 {
                             display: flex;
                             flex-direction: row;
                             justify-content: space-between;
                             margin-top: 20px;
                             gap: 20px;
-    
+
                             .input-box {
                                 label {
                                     display: block;
@@ -955,7 +988,7 @@ body {
                                     color: #333;
                                     margin-bottom: 5px;
                                 }
-    
+
                                 input[type="text"] {
                                     width: 100%;
                                     padding: 10px;
@@ -964,24 +997,24 @@ body {
                                 }
                             }
                         }
-    
+
                         .card-meta-2,
                         .card-meta-3 {
                             .dropDownGroup {
                                 display: flex;
                                 margin-top: 20px;
                                 gap: 20px;
-    
+
                                 .dropdown-item {
                                     width: 95%;
-    
+
                                     label {
                                         display: block;
                                         font-size: 14px;
                                         color: #333;
                                         margin-bottom: 5px;
                                     }
-    
+
                                     select {
                                         width: 100%;
                                         padding: 10px;
@@ -989,7 +1022,7 @@ body {
                                         border-radius: 5px;
                                     }
                                 }
-    
+
                                 #cvv {
                                     width: 100%;
                                     padding: 10px;
@@ -1001,31 +1034,31 @@ body {
                                 }
                             }
                         }
-    
+
                         .card-meta-3 {
                             .dropDownGroup {
                                 display: flex;
                                 margin-top: 20px;
                                 flex-direction: column;
                                 gap: 20px;
-    
+
                                 .grid-bi {
                                     display: flex;
                                     flex-direction: row;
                                     justify-content: space-between;
                                     gap: 20px;
                                 }
-    
+
                                 .dropdown-item {
                                     width: 100%;
-    
+
                                     label {
                                         display: block;
                                         font-size: 14px;
                                         color: #333;
                                         margin-bottom: 5px;
                                     }
-    
+
                                     select {
                                         width: 100%;
                                         padding: 10px;
@@ -1035,7 +1068,7 @@ body {
                                 }
                             }
                         }
-    
+
                         .card-meta-4 {
                             .dropDownGroup {
                                 display: flex;
@@ -1045,17 +1078,17 @@ body {
                         }
                     }
                 }
-    
+
                 .booking-details {
                     width: 100%;
                     height: 100%;
-    
+
                     .information-container {
                         padding: 20px;
-    
+
                         .flight-detail-container {
                             padding: 20px;
-    
+
                             .flightDetails {
                                 height: fit-content;
                                 width: 100%;
@@ -1067,13 +1100,13 @@ body {
                                 align-items: end;
                                 border: 1px solid rgba(124, 124, 124, 0.384);
                                 padding: 20px;
-    
+
                                 .priceDisplay {
                                     font-size: 18px;
                                     text-align: right;
                                     font-weight: 600;
                                 }
-    
+
                                 .segmentContainer {
                                     border: none;
                                     padding: 0;
@@ -1081,19 +1114,19 @@ body {
                                     width: 100%;
                                     height: fit-content;
                                     margin-bottom: 20px;
-    
+
                                     .carrier-info {
                                         display: flex;
                                         flex-direction: row;
                                         justify-content: space-between;
                                         padding: 20px 0px;
-    
+
                                         .carrier {
                                             display: flex;
                                             flex-direction: row;
                                             gap: 20px;
                                             align-items: center;
-    
+
                                             img {
                                                 width: 30px;
                                                 height: 30px;
@@ -1104,22 +1137,23 @@ body {
                                                 font-size: 20px;
                                                 border: 1px solid rgba(0, 0, 0, 0.253);
                                             }
-    
+
                                             .signature {
                                                 h3 {
                                                     font-size: 15px;
                                                     color: $PrimaryThemeColor;
                                                 }
-    
+
                                                 p {
                                                     font-size: 12px;
                                                     color: $carrier-model-color;
                                                 }
                                             }
                                         }
-    
+
                                         .travel-comfort {
                                             font-size: 12px;
+
                                             .stopOver {
                                                 padding: 0;
                                                 font-size: 15px;
@@ -1127,7 +1161,7 @@ body {
                                             }
                                         }
                                     }
-    
+
                                     .destinations {
                                         border: none;
                                         padding: 0;
@@ -1137,24 +1171,27 @@ body {
                                         display: flex;
                                         flex-direction: row;
                                         justify-content: space-between;
-                                        
-                                        .departure-info, .arrival-info {
+
+                                        .departure-info,
+                                        .arrival-info {
                                             .iataCode {
                                                 font-size: 40px;
                                                 font-weight: 500;
                                                 color: black;
                                             }
-                                            .date, .time {
+
+                                            .date,
+                                            .time {
                                                 font-size: 15px;
                                                 font-weight: 400;
                                             }
                                         }
-    
+
                                         .arrival-info {
                                             text-align: right;
                                         }
                                     }
-    
+
                                     .features {
                                         display: flex;
                                         flex-direction: row;
@@ -1166,26 +1203,28 @@ body {
                                         color: rgba(26, 26, 26, 0.733);
                                         margin-top: 30px;
                                         border-bottom: 1px solid rgba(48, 48, 48, 0.14);
+
                                         .circle {
                                             width: 5px;
                                             height: 5px;
                                             border-radius: 50%;
                                             background-color: rgba(48, 48, 48, 0.384);
                                         }
-    
+
                                         .feature {
                                             font-weight: 500;
+
                                             .icon {
                                                 font-size: 10px;
                                             }
                                         }
                                     }
                                 }
-    
+
                                 .segmentContainer:last-child {
                                     border-bottom: none;
                                 }
-    
+
                                 .confirmBtn {
                                     width: 150px;
                                     background-color: rgb(19, 129, 255);

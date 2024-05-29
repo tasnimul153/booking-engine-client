@@ -20,18 +20,7 @@ const Navbar = () => {
 
   useEffect(() => {
     if (location.pathname === "/") {
-      // Home Page
-      setNavLink("navLink");
-      setButtonClass("signupButtonHomePage");
-      setLogoClass("logoHomePage");
-      setNavBarBackground("transparent");
-      setToggleButtonColor("black");
     } else {
-      // Other Pages
-      setNavLink("navLinkOthers");
-      setButtonClass("signupButtonOtherPage");
-      setLogoClass("logoOtherPage");
-      setNavBarBackground("white");
       if (signupButtonClicked) {
         setNavBarBackground('url("../../Assets/image-from-rawpixel-id-3713064-original.png")');
       } else {
@@ -62,39 +51,51 @@ const Navbar = () => {
       {/* Navigation Bar */}
       <section className="navBarSection" style={{ background: navBarBackground }}>
         <header className="header flex">
-          {/* Company Logo */}
-          <div className="logoDiv">
-            <Link to="/" className="logo flex">
-              <h1 className={logoClass}>
-                <SiYourtraveldottv /> A-1 TRAVEL AND TOURS
-              </h1>
-            </Link>
-          </div>
+          <div className="header-content">
+            {/* Company Logo */}
+            <div className="logoDiv">
+              <Link to='/' className="logo flex" href="#">
+                <h1 className={logoClass}>
+                  <div className="companyLogo"></div>
+                  <p>A-1 TRAVEL AND TOURS</p>
+                </h1>
+              </Link>
+            </div>
 
-          {/* Navigation Bar */}
-          <div className={active}>
-            <ul className="navLists flex">
-              <li className="navItem">
-                <Link to='/'>
-                  <p className={navLink}>HOME</p>
-                </Link>
-              </li>
-              <li className="navItem">
-                <p className={navLink}>SERVICES</p>
-              </li>
-              <li className="navItem">
-                <p className={navLink}>ABOUT</p>
-              </li>
-              <button className={buttonClass} onClick={onSignupButtonClick}>Sign Up</button>
-            </ul>
-          </div>
+            {/* Navigation Bar */}
+            <div className={active}>
+              <ul className="navLists flex">
+                <li className="navItem">
+                  <Link to='/'>
+                    <p className={navLink}>HOME</p>
+                  </Link>
+                </li>
+                <li className="navItem">
+                  <Link to='/services'>
+                    <p className={navLink}>SERVICES</p>
+                  </Link>
+                </li>
+                <li className="navItem">
+                  <Link to='/about'>
+                    <p className={navLink}>ABOUT</p>
+                  </Link>
+                </li>
+              </ul>
+            </div>
 
-          {/* Toggle Navigation Bar */}
-          <div className="toggleNavBar" onClick={showNav}>
-            <HiBars3BottomRight className="icon" style={{color: toggleButtonColor}} />
+
+            <div className="btn-group">
+              <button className={buttonClass} id="signInBtn" onClick={onSignupButtonClick}>Sign In</button>
+              <button className={buttonClass} id="signUpBtn" onClick={onSignupButtonClick} style={{ marginLeft: "5px" }}>Sign Up</button>
+            </div>
+
+            {/* Toggle Navigation Bar */}
+            <div className="toggleNavBar" onClick={showNav} >
+              <HiBars3BottomRight className="icon" style={{ color: toggleButtonColor }} />
+            </div>
           </div>
         </header>
-      </section>
+      </section >
     </>
   );
 };

@@ -10,6 +10,7 @@
   --bodyColor: rgb(240, 240, 240);
   --inputColor: rgb(239, 239, 239);
   --cardBG: rgb(225, 225, 225);
+  --font-primary: "Open Sans", sans-serif;
 }
 
 .signupButtonClicked {
@@ -34,55 +35,104 @@
 
 .navBarSection {
   width: 100%;
-  position: absolute;
   z-index: 1000;
+  position: fixed;
   transition: 0.5s ease-in-out;
 }
 
 header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: transparent;
-  width: 75.5%;
-  min-width: 575px;
-  margin: auto;
-  padding: 1rem;
+  width: 100%;
   height: 4rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
-header .navBar {
-  width: 28rem;
-}
-header .navBar .navLists {
+header .header-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 80%;
+  margin: auto;
+  height: 4rem;
+  background-color: white;
+}
+header .header-content .logoDiv .logoHomePage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .header-content .logoDiv .logoHomePage .companyLogo {
+  width: 20px;
+  margin-right: 5px;
+  height: 20px;
+  background: url("../../Assets/company_logo.png") no-repeat center center/cover;
+}
+header .header-content .logoDiv .logoHomePage p {
+  font-size: 1rem;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  color: #000;
+}
+header .header-content .navBar {
+  width: 33.3333333333;
+}
+header .header-content .navBar .navLists {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
 }
-header .navBar .navLists .navItem {
-  padding: 0 1rem;
+header .header-content .navBar .navLists .navItem {
   cursor: pointer;
 }
-header .navBar .navLists .navItem .navLink {
-  color: rgb(255, 255, 255);
-  font-size: 15px;
+header .header-content .navBar .navLists .navItem .navLink {
+  color: rgb(32, 32, 32);
+  font-size: 12px;
   padding: 0.5rem;
+  font-family: var(--font-primary);
   font-weight: 500;
+  margin-right: 30px;
+  border-bottom: 2px solid transparent;
 }
-header .navBar .navLists .navItem .navLink:hover {
-  border-bottom: 2px solid rgb(255, 255, 255);
-  color: rgb(255, 255, 255);
+header .header-content .navBar .navLists .navItem .navLink:hover {
+  border-bottom: 2px solid #000000;
+  color: #000000;
 }
-header .navBar .navLists .navItem .navLinkOthers {
-  color: rgba(43, 43, 43, 0.747);
-  font-size: 15px;
-  padding: 0.5rem;
-  font-weight: 500;
-}
-header .navBar .navLists .navItem .navLinkOthers:hover {
+header .header-content .btn-group {
+  outline: none;
+  cursor: pointer;
+  font-size: 12px;
   font-weight: 600;
-  border-bottom: 2px solid #002677;
-  color: #002677;
+  width: auto;
+  font-family: var(--font-primary);
+  margin-top: -2px;
+}
+header .header-content .btn-group #signInBtn {
+  color: rgb(49, 87, 255);
+  border: none;
+  background-color: transparent;
+  margin-left: 2rem;
+  font-weight: 500;
+  padding: 8px 15px;
+  font-size: 12px;
+  cursor: pointer;
+}
+header .header-content .btn-group #signInBtn:hover {
+  font-weight: 700;
+}
+header .header-content .btn-group #signUpBtn {
+  color: rgb(49, 87, 255);
+  border: 1px solid rgb(49, 87, 255);
+  background-color: transparent;
+  border-radius: 100px;
+  margin-left: 2rem;
+  font-weight: 500;
+  padding: 8px 15px;
+  transition: 0.1s ease-in-out;
+  font-size: 12px;
+  cursor: pointer;
+}
+header .header-content .btn-group #signUpBtn:hover {
+  color: white;
+  background: rgb(49, 87, 255);
 }
 header .logoHomePage {
   color: rgb(255, 255, 255);
@@ -121,69 +171,17 @@ header .toggleNavBar {
 }
 header .toggleNavBar .icon {
   font-size: 25px;
-  color: rgb(255, 255, 255);
-}
-header .toggleNavBar:hover.icon {
-  color: var(--secondary-color);
-}
-header .signupButtonHomePage {
-  border: none;
-  outline: none;
-  cursor: pointer;
-  background: transparent;
-  color: rgb(255, 255, 255);
-  font-size: 15px;
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-}
-header .signupButtonHomePage:hover {
-  background: rgb(255, 255, 255);
-  color: black;
-}
-header .signupButtonOtherPage {
-  border: none;
-  outline: none;
-  cursor: pointer;
-  background: transparent;
-  color: #002677;
-  font-size: 15px;
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-}
-header .signupButtonOtherPage:hover {
-  background: #002677;
   color: white;
 }
 @media screen and (max-width: 1024px) {
-  header .logoHomePage {
-    color: rgb(255, 255, 255);
-    font-weight: 600;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    position: relative;
-    z-index: 1;
+  header .header-content {
+    width: 90%;
   }
-  header .logoHomePage .icon {
-    font-size: 25px;
-    color: rgb(255, 255, 255);
-    transform: translateY(5px);
-  }
-  header .logoOtherPage {
-    color: #002677;
-    font-weight: 600;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    position: relative;
-    z-index: 1;
-  }
-  header .logoOtherPage .icon {
-    font-size: 25px;
-    color: #002677;
-    transform: translateY(5px);
+  header .logoDiv .logoHomePage .companyLogo {
+    width: 20px;
+    margin-right: 5px;
+    height: 20px;
+    background: url("../../Assets/company_logo_trns.png") no-repeat center center/cover;
   }
   header .toggleNavBar {
     display: flex;
@@ -192,9 +190,9 @@ header .signupButtonOtherPage:hover {
   }
   header .navBar {
     position: absolute;
-    background: rgba(173, 173, 173, 0.5);
-    -webkit-backdrop-filter: blur(20px);
-            backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.281);
+    -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
     height: -moz-max-content;
     height: max-content;
     width: 100%;
@@ -222,6 +220,8 @@ header .signupButtonOtherPage:hover {
   }
   header .navBar .navLists .navItem .navLink:hover {
     color: white;
+    border: none;
+    background-color: black;
   }
   header .activeNavBar {
     top: 4rem;

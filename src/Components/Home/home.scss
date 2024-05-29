@@ -12,8 +12,9 @@
     --cardBG: rgb(225, 225, 225);
 }
 
+
 .allContainer {
-    height: 1620px;
+    height: 2200px;
     background-color: white;
     width: 100%;
     margin: 0;
@@ -40,7 +41,7 @@ $mainTopRadius: 50px;
 
 .home {
     width: 100%;
-    height: 80vh;
+    height: 90vh;
     position: relative;
     display: flex;
     align-items: center;
@@ -53,7 +54,7 @@ $mainTopRadius: 50px;
         width: 80%;
         height: 30vw;
         position: absolute;
-        top: 0;
+        top: 65px;
         overflow: hidden;
         display: flex;
         justify-content: flex-end;
@@ -70,7 +71,7 @@ $mainTopRadius: 50px;
             height: 100%;
             width: 100%;
             position: absolute;
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0), rgb(255, 255, 255));
+            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0), rgb(255, 255, 255));
             mix-blend-mode: hard-light;
             z-index: 5;
 
@@ -93,24 +94,12 @@ $mainTopRadius: 50px;
             }
         }
 
-        .overlay2 {
-            @include common-properties;
-            height: 60px;
-            width: 100%;
-            position: absolute;
-            mix-blend-mode: hard-light;
-            background: linear-gradient(rgba(0, 0, 0, 0.178), transparent);
-            backdrop-filter: blur(5px);
-            z-index: 2;
-        }
-
         .overlay3 {
             @include common-properties;
             height: 100%;
             width: 100px;
             position: absolute;
-            mix-blend-mode: hard-light;
-            background: linear-gradient(to right, rgba(0, 0, 0, 0.3), transparent);
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.2), transparent);
             // backdrop-filter: blur(2px);
             z-index: 2;
         }
@@ -120,7 +109,7 @@ $mainTopRadius: 50px;
             width: 100px;
             position: absolute;
             mix-blend-mode: hard-light;
-            background: linear-gradient(to left, rgba(0, 0, 0, 0.3), transparent);
+            background: linear-gradient(to left, rgba(0, 0, 0, 0.2), transparent);
             //backdrop-filter: blur(2px);
             z-index: 2;
         }
@@ -143,21 +132,20 @@ $mainTopRadius: 50px;
             background-size: cover;
             background-position: center;
             height: 280px;
-            width: 98%;
+            width: 90%;
             padding: 2rem;
-            border-radius: 8px;
+            border-radius: 5px;
             display: flex;
             position: relative;
+            top: 70px;
             justify-content: space-between;
             flex-direction: column;
             color: var(--black-color);
             font-size: 1.2rem;
-            border: none;
-            margin: 0 auto;
-            //box-shadow: 0px -5px 5px 0px rgba(0, 0, 0, 0.432);
+            margin: 0 auto 80px auto;
             font-weight: 500;
             z-index: 8;
-            background-color: rgba(255, 255, 255, 0.747);
+            background-color: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(20px);
             animation: fadeInUp 0.5s ease-in-out forwards;
 
@@ -375,11 +363,10 @@ $mainTopRadius: 50px;
                     padding: 0.5rem 1rem;
                     width: 100%;
                     color: var(--black-color);
-                    background-color: white;
-                    border: 1px solid rgba(54, 54, 54, 0.24);
-                    //box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+                    background-color: rgb(255, 255, 255);
+                    border: 1px solid rgba(0, 0, 0, 0.2);
                     border-radius: 5px;
-                    height: 95px;
+                    height: 85px;
 
                     &:hover {
                         border: 1px solid rgba(128, 128, 128, 0.5);
@@ -397,9 +384,10 @@ $mainTopRadius: 50px;
                         cursor: pointer;
 
                         .constant-tag {
-                            font-size: 0.8rem;
+                            font-size: 0.58rem;
                             font-weight: 500;
-                            color: var(--greyText);
+                            font-family: 'Poppins';
+                            color: rgba(0, 0, 0, 0.589);
                             position: relative;
 
                             #dropdownArrow {
@@ -412,17 +400,17 @@ $mainTopRadius: 50px;
                         }
 
                         .Middle {
-                            font-size: 1rem;
+                            font-size: 0.9rem;
                             font-weight: 600;
                             color: rgb(80, 80, 80);
                         }
 
                         .Last {
-                            font-size: 0.65rem;
+                            font-size: 0.58rem;
                             font-weight: 500;
                             padding-top: 10px;
                             //white-space: nowrap;
-                            color: rgba(94, 94, 94, 0.795);
+                            color: rgba(0, 0, 0, 0.7);
                         }
                     }
                 }
@@ -471,7 +459,7 @@ $mainTopRadius: 50px;
                     outline: none;
                     padding: 0.5rem;
                     width: calc(100%/5 + 7px);
-                    height: 60px;
+                    height: 55px;
                     border: none;
                     font-size: 1.1rem;
                     font-weight: 500;
@@ -481,6 +469,7 @@ $mainTopRadius: 50px;
                     justify-content: center;
                     color: #007be0;
                     border: 1px solid #007be0;
+                    border-radius: 2px;
                     background-color: white;
                     transition: all 0.2s ease-in-out;
 
@@ -506,62 +495,58 @@ $mainTopRadius: 50px;
     background-color: white;
     padding: 50px 0px;
 
-    .mobile-app-container {
-        width: 80%;
-        background-color: #fffdfa;
-        padding: 2rem;
-        padding-left: 3rem;
-        height: 300px;
-        margin: 60px auto 50px auto;
+    .deal-card {
+        height: fit-content;
+        width: 75%;
+        margin: 80px auto;
         display: flex;
         flex-direction: row;
+        gap: 40px;
+        justify-content: center;
         align-items: center;
-        overflow: hidden;
-        justify-content: space-between;
-        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
-        border-radius: 10px;
-
-        img {
-            width: 500px;
-            height: 500px;
-            position: relative;
-            top: -80px;
-            left: 75px;
-            background-position: center;
-            background-size: cover;
-        }
-
-        .text-content {
-            width: 60%;
-            height: 100%;
+        
+        .leftBox {
+            width: 50%;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            justify-content: space-between;
+            gap: 33px;
 
             h2 {
-                font-family: 'Open-sans', sans-serif;
+                font-family: 'Open Sans', sans-serif;
                 font-size: 30px;
                 font-weight: 500;
                 color: var(--black-color);
             }
 
             p {
-                font-family: 'Open-sans', sans-serif;
-                font-size: 15px;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 16px;
                 font-weight: 400;
-                text-align: justify;
+                color: rgba(0, 0, 0, 0.815);
             }
 
+            button {
+                width: 100%;
+                padding: 10px;
+                border: none;
+                font-size: 12px;
+                border-radius: 5px;
+                background-color: var(--primary-color);
+                color: #fff;
+                cursor: pointer;
+            }
+        }
+
+        .rightBox {
             img {
-                width: 60%;
-                height: 20%;
-                position: relative;
-                left: 0;
-                top: 0;
+                width: 100%;
+                height: auto;
+                border-radius: 3px;
             }
         }
     }
-
+    
     .deals-container {
         width: 80%;
         height: 600px;
@@ -570,10 +555,13 @@ $mainTopRadius: 50px;
 
         h2 {
             font-family: 'Poppins', sans-serif;
-            //border-top: 1px solid rgba(117, 117, 117, 0.2);
-            padding: 0px 0px 30px 0px;
+            border-top: 1px solid rgba(117, 117, 117, 0.2);
+            padding: 30px 0px 30px 0px;
+            text-align: center;
             font-size: 25px;
             font-weight: 400;
+            margin-top: 50px;
+            margin-bottom: 10px;
             color: var(--black-color);
         }
 
@@ -589,7 +577,7 @@ $mainTopRadius: 50px;
                 //z-index: 3;
                 display: flex;
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
                 gap: 10px;
 
                 /*.overlay-deal {
@@ -610,18 +598,18 @@ $mainTopRadius: 50px;
                 }
 
                 h3 {
-                    font-family: 'Open-sans', sans-serif;
+                    font-family: 'Poppins', sans-serif;
                     font-weight: lighter;
                     font-size: 20px;
                     color: var(--black-color);
                 }
 
                 p {
-                    font-family: 'Open-sans', sans-serif;
+                    font-family: 'Poppins', sans-serif;
                     font-size: 15px;
                     font-weight: 400;
-                    text-align: justify;
-                    color: var(--text-color);
+                    text-align: center;
+                    color: #1d1d1d;
                 }
 
                 span {
@@ -724,7 +712,7 @@ $mainTopRadius: 50px;
     }
 
     .allContainer {
-        height: 100%;
+        height: 4250px;
         background-color: white;
         width: 100%;
         margin: 0;
@@ -736,6 +724,7 @@ $mainTopRadius: 50px;
         height: 100%;
         background-color: white;
         padding: 50px 0px;
+        margin-top: 280px;
 
         .mobile-app-container {
             width: 80%;

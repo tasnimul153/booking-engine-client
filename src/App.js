@@ -6,8 +6,8 @@ import Reservation from "./Components/Reservation/Reservation";
 import SearchPage from "./Components/SearchPage/SearchPage";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { createContext, useState } from "react";
-import Footer from "./Components/Footer/Footer";
 import { FlightDetailsProvider } from "./Components/Contexts/FlightDetailContext";
+import Footer from "./Components/Footer/Footer";
 
 export const NearestAirportsListContext = createContext();
 
