@@ -47,8 +47,6 @@ const SearchPage = () => {
         handlePassengerAndClassSelect,
     } = useSearchInputs();
 
-    const [sortByPrice, setSortByPrice] = useState(1);
-
     useEffect(() => {
         for (let param of searchParams.entries()) {
             console.log(param); // logs a [key, value] pair for each query parameter
@@ -69,7 +67,7 @@ const SearchPage = () => {
         getTokenFromBackend();
     }, []);
 
-    const [params, setParams] = useState({
+    const params = {
         originLocationCode: searchParams.get("fromAirportCode"),
         destinationLocationCode: searchParams.get("toAirportCode"),
         departureDate: formatDate(searchParams.get("departureDateExact")),
@@ -80,8 +78,8 @@ const SearchPage = () => {
         travelClass: searchParams.get("classType"),
         nonStop: false,
         currencyCode: searchParams.get("currencyCode")
-    });
-
+    }
+    
     useEffect(() => {
         const fetchFlightOffers = async () => {
             setLoading(true);
@@ -129,16 +127,15 @@ const SearchPage = () => {
     const triggureFilter = (e) => {
         if (e.target.type === 'radio') {
             let val = e.target.value;
-            setSortByPrice(val);
 
             // if val == 1 then sort by price low to high
             // if val == 2 then sort by price high to low
-            if (val == 1) {
+            if (val === 1) {
                 setFilterFlights([...filterFlights.sort((a, b) => a.price.total - b.price.total)]);
-            } else if (val == 2) {
+            } else if (val === 2) {
                 setFilterFlights([...filterFlights.sort((a, b) => b.price.total - a.price.total)]);
             }
-        } else if (e.target.type == 'checkbox' && e.target.checked) {
+        } else if (e.target.type === 'checkbox' && e.target.checked) {
             setFilterFlights([...filterFlights, e.target.value]);
         } else {
             setFilterFlights(filterFlights.filter((flight) => flight !== e.target.value));
@@ -263,8 +260,8 @@ const SearchPage = () => {
                                         <Passenger
                                             tag='Passengers & Class'
                                             passenger_count={passengerAndClass.passenger_count}
-                                            children_count={passengerAndClass.children_count == undefined ? 0 : passengerAndClass.children_count}
-                                            infant_count={passengerAndClass.infant_count == undefined ? 0 : passengerAndClass.infant_count}
+                                            children_count={passengerAndClass.children_count === undefined ? 0 : passengerAndClass.children_count}
+                                            infant_count={passengerAndClass.infant_count === undefined ? 0 : passengerAndClass.infant_count}
                                             class_type={passengerAndClass.class_type}
                                             onSelect={(passenger_count, children_count, infant_count, class_type) => handlePassengerAndClassSelect(passenger_count, children_count, infant_count, class_type)}
                                         />
@@ -332,6 +329,7 @@ const SearchPage = () => {
                                                     }
                                                 }
                                             }
+                                            return null;
                                         })
                                     }
 
