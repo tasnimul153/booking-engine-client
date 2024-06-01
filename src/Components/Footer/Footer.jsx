@@ -1,5 +1,6 @@
 import React from 'react';
 import './footer.css';
+import { Link } from 'react-router-dom';
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 
 const Footer = () => {
@@ -39,7 +40,12 @@ const Footer = () => {
                 <div className='footer-section'>
                     <h3>Connect</h3>
                     <ul>
-                        <li>Facebook</li>
+                        <li>
+                            <a href="https://www.facebook.com/a1travelstours" style={{
+                                color: "rgb(0, 0, 200)",
+                                fontFamily: "Open Sans, sans-serif",
+                            }} target='_blank'>Facebook</a>
+                        </li>
                         <li>Twitter</li>
                         <li>Instagram</li>
                         <li>LinkedIn</li>

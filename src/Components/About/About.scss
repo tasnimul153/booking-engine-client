@@ -1,0 +1,108 @@
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ebebeb, #ffffff);
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.about-content {
+    max-width: 800px;
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 8px;
+    margin-top: 50px;
+    box-shadow: 0 2px 10px 0px rgba(0, 0, 0, 0.1);
+    color: #333;
+    animation: fadeIn 1s ease-in-out;
+
+    h1 {
+        font-size: 42px;
+        margin-bottom: 30px;
+        color: #004386;
+        font-family: 'Poppins', sans-serif;
+        border-bottom: 2px solid #004386;
+        padding-bottom: 10px;
+    }
+
+    .typist-wrapper p {
+        font-size: 18px;
+        line-height: 1.5;
+        color: #004386;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+        border-bottom: 2px solid #004386;
+    }
+
+    .additional-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .info-block {
+            margin-bottom: 30px;
+            text-align: left;
+            width: 100%;
+
+            h2 {
+                font-size: 28px;
+                margin-bottom: 10px;
+                color: #333;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    width: 50px;
+                    height: 4px;
+                    background: #004386;
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    bottom: -10px;
+                }
+            }
+
+            p {
+                font-size: 16px;
+                line-height: 1.8;
+                color: #666;
+            }
+        }
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-content {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .typist-wrapper p, .additional-info p {
+        font-size: 14px;
+    }
+
+    .additional-info h2 {
+        font-size: 24px;
+    }
+}

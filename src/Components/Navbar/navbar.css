@@ -35,7 +35,7 @@
 
 .navBarSection {
   width: 100%;
-  z-index: 1000;
+  z-index: 5;
   position: fixed;
   transition: 0.5s ease-in-out;
 }
@@ -173,9 +173,10 @@ header .toggleNavBar .icon {
   font-size: 25px;
   color: white;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1100px) {
   header .header-content {
-    width: 90%;
+    width: 100%;
+    padding: 0 4rem;
   }
   header .logoDiv .logoHomePage .companyLogo {
     width: 20px;
@@ -220,8 +221,6 @@ header .toggleNavBar .icon {
   }
   header .navBar .navLists .navItem .navLink:hover {
     color: white;
-    border: none;
-    background-color: black;
   }
   header .activeNavBar {
     top: 4rem;

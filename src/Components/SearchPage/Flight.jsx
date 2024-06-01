@@ -27,13 +27,6 @@ const Flight = ({ flight, isFirst, currencyCode, dictionaries, passengerAndClass
         }
     };
 
-    const parseDuration = (duration) => {
-        const match = duration.match(/PT(\d+H)?(\d+M)?/); // matches PT#H#M
-        const hours = match[1] ? parseInt(match[1]) : 0; // gets hours if present, otherwise 0
-        const minutes = match[2] ? parseInt(match[2]) : 0; // gets minutes if present, otherwise 0
-        return hours * 60 + minutes; // returns duration in minutes
-    };
-
     const handleFlightDetailSelect = () => {
         setIsExpended(!isExpended);
         console.log(isExpended);

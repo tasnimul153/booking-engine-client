@@ -41,7 +41,7 @@ $navbarItemColor: rgb(255, 255, 255);
 
 .navBarSection {
     width: 100%;
-    z-index: 1000;
+    z-index: 5;
     position: fixed;
     transition: 0.5s ease-in-out;
 }
@@ -196,10 +196,11 @@ header {
         }
     }
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1100px) {
 
         .header-content {
-            width: 90%;
+            width: 100%;
+            padding: 0 4rem;
         }
 
         .logoDiv {
@@ -251,8 +252,6 @@ header {
 
                         &:hover {
                             color: white;
-                            border: none;
-                            background-color: black;
                         }
                     }
                 }

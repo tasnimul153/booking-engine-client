@@ -1,0 +1,196 @@
+.signup-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #066aff;
+}
+
+.signup-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding-top: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: url("../../Assets/BackgroundHomePage2.jpg") no-repeat center center/cover;
+}
+
+.signup-left {
+  flex: 1;
+  padding: 0px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.616);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+.signup-left h1 {
+  margin-bottom: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 40px;
+  font-family: "Inter", sans-serif;
+}
+.signup-left p {
+  color: #494949;
+  font-size: 11px;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+}
+.signup-left form {
+  display: flex;
+  margin: 50px auto;
+  width: 70%;
+  flex-direction: column;
+}
+.signup-left form label {
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 11px;
+  font-family: "Inter", sans-serif;
+}
+.signup-left form input {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: none;
+  border-radius: 3px;
+  font-size: 12px;
+  background: rgba(255, 255, 255, 0.596);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  font-family: "Inter", sans-serif;
+}
+.signup-left form input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+.signup-left form .namegroup, .signup-left form .passwordgroup {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 10px;
+  justify-content: space-between;
+}
+.signup-left form .namegroup .input-box-each, .signup-left form .passwordgroup .input-box-each {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.signup-left form .namegroup .input-box-each:last-child, .signup-left form .passwordgroup .input-box-each:last-child {
+  margin-right: 0;
+}
+.signup-left form .namegroup .input-box-each input {
+  width: 99.9%;
+}
+.signup-left form button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  font-size: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.signup-left form button:hover {
+  background-color: #0056b3;
+}
+.signup-left .footer-text {
+  font-size: 12px;
+  color: #999;
+  margin-top: 20px;
+}
+.signup-left .footer-text a {
+  color: #007bff;
+  text-decoration: none;
+}
+.signup-left .footer-text a:hover {
+  text-decoration: underline;
+}
+
+.signup-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(247, 249, 252, 0);
+  border-radius: 0 10px 10px 0;
+}
+.signup-right .image-container {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+.signup-right .image-container p {
+  font-size: 20px;
+  text-shadow: 0 2px 10px rgb(0, 255, 191);
+  color: #ffffff;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+  .signup-left {
+    padding: 100px 30px;
+  }
+  .signup-right .image-container p {
+    font-size: 18px;
+  }
+}
+@media (max-width: 992px) {
+  .signup-container {
+    flex-direction: column;
+    padding-top: 20px;
+  }
+  .signup-left {
+    width: 100%;
+    padding: 80px 20px;
+  }
+  .signup-right {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    padding: 20px;
+  }
+  .signup-right .image-container p {
+    font-size: 16px;
+  }
+}
+@media (max-width: 768px) {
+  .signup-left {
+    padding: 60px 20px;
+  }
+  .signup-right {
+    padding: 10px;
+  }
+  .signup-right .image-container p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 576px) {
+  .signup-left {
+    padding: 40px 10px;
+  }
+  .signup-left h1 {
+    font-size: 24px;
+  }
+  .signup-left p {
+    font-size: 12px;
+  }
+  .signup-left form {
+    width: 90%;
+  }
+  .signup-left form input {
+    padding: 6px;
+  }
+  .signup-left form button {
+    padding: 8px;
+  }
+  .signup-right {
+    padding: 5px;
+  }
+  .signup-right .image-container p {
+    font-size: 12px;
+  }
+}/*# sourceMappingURL=Signup.css.map */

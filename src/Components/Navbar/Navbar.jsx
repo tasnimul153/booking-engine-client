@@ -3,7 +3,7 @@ import "./navbar.css";
 import { HiBars3BottomRight } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import LoginForm from "../Authentication/LoginForm";
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const location = useLocation();
@@ -36,16 +36,20 @@ const Navbar = () => {
     }
   };
 
+  const navigate = useNavigate();
+
   // Sign Up Button Click
   const onSignupButtonClick = () => {
-    setSignupButtonClicked(!signupButtonClicked);
+    navigate('/signup');
+  };
+
+  // Sign In Button Click
+  const onSignInButtonClick = () => {
+    navigate('/signin');
   };
 
   return (
     <>
-      {/* Sign Up Button Clicked */}
-      {signupButtonClicked && (<LoginForm toggle={setSignupButtonClicked} />)}
-
       {/* Navigation Bar */}
       <section className="navBarSection" style={{ background: navBarBackground }}>
         <header className="header flex">
@@ -69,7 +73,7 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li className="navItem">
-                  <Link to='/services'>
+                  <Link to='/'>
                     <p className={navLink}>SERVICES</p>
                   </Link>
                 </li>
@@ -83,7 +87,7 @@ const Navbar = () => {
 
 
             <div className="btn-group">
-              <button className={buttonClass} id="signInBtn" onClick={onSignupButtonClick}>Sign In</button>
+              <button className={buttonClass} id="signInBtn" onClick={onSignInButtonClick}>Sign In</button>
               <button className={buttonClass} id="signUpBtn" onClick={onSignupButtonClick} style={{ marginLeft: "5px" }}>Sign Up</button>
             </div>
 
