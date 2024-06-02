@@ -12,12 +12,13 @@ import { MdEventSeat } from "react-icons/md";
 import axios from "axios";
 
 
-const Flight = ({ flight, isFirst, currencyCode, dictionaries, passengerAndClass }) => {
+const Flight = ({ flight, isFirst, currencyCode, dictionaries, onSelect }) => {
 
     const navigate = useNavigate();
     const [isExpended, setIsExpended] = useState(false);
 
     const { metaData, setMetaData } = useContext(FlightDetailsContext);
+    const [loading, setLoading] = useState(false);
     const [fetchComplete, setFetchComplete] = useState(false);
 
     const jsonPayloadFlightOffers = {
@@ -29,13 +30,13 @@ const Flight = ({ flight, isFirst, currencyCode, dictionaries, passengerAndClass
 
     const handleFlightDetailSelect = () => {
         setIsExpended(!isExpended);
-        console.log(isExpended);
+        //console.log(isExpended);
     }
 
     const getTokenFromBackend = async () => {
         try {
             const response = await fetchAccessToken();
-            console.log(`Flight AccessToken: ${response}`);
+            //console.log(`Flight AccessToken: ${response}`);
             return response; // Return the token
         } catch (error) {
             console.error('Error fetching access token:', error);
@@ -46,6 +47,8 @@ const Flight = ({ flight, isFirst, currencyCode, dictionaries, passengerAndClass
     const fetchFlightOffers = async (token) => {
         setFetchComplete(false);
         try {
+            setLoading(true);
+            onSelect(true);
             if (token) {
                 const response = await axios.post(
                     'https://test.api.amadeus.com/v1/shopping/flight-offers/pricing',
@@ -54,21 +57,23 @@ const Flight = ({ flight, isFirst, currencyCode, dictionaries, passengerAndClass
                         headers: { Authorization: `Bearer ${token}` },
                     }
                 );
-                console.log(`Reservations Pricing: ${JSON.stringify(response.data)}`);
                 setFetchComplete(true);
                 return response.data;
             }
         } catch (error) {
             console.error('Error fetching flight offers:', error);
         } finally {
-            console.log();
+            setLoading(false);
+            onSelect(false);
+            navigate(`/Reservation?${[]}`);
+            //console.log();
         }
     };
 
     const handleFlightSelectButton = async () => {
 
         //delete flight.lastTicketingDateTime; 
-
+        
         const token = await getTokenFromBackend();
         const flightOffers = await fetchFlightOffers(token);
 
@@ -77,15 +82,6 @@ const Flight = ({ flight, isFirst, currencyCode, dictionaries, passengerAndClass
             dictionary: dictionaries
         });
     }
-
-    useEffect(() => {
-        const navigateToReservation = async () => {
-            if (fetchComplete) {
-                navigate(`/Reservation?${[]}`);
-            }
-        }
-        navigateToReservation();
-    }, [fetchComplete]);
 
     function getCurrencySymbol(currencyCode, locale = 'en-US') {
         // Create a NumberFormat object for the given locale and currency.
@@ -139,6 +135,9 @@ const Flight = ({ flight, isFirst, currencyCode, dictionaries, passengerAndClass
 
             {/** Flight facilites information*/}
             <div className="facilities-info">
+                <div className="loading-container">
+                    <div className="loading-bar"></div>
+                </div>
                 <div className="left-facilities">
                     <div className="checked-bags">
                         <FaSuitcaseRolling className="icon" />CHECKED {

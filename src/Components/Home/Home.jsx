@@ -63,7 +63,7 @@ const Home = () => {
             try {
                 const response = await fetchAccessToken();
                 setAccessToken(response);
-                console.log(response);
+                console.log('Token Generated');
             } catch (error) {
                 console.error('Error fetching access token:', error);
             }
@@ -77,10 +77,11 @@ const Home = () => {
     useEffect(() => {
         if (nearestAirports.length > 0) {
             setNearestAirportsList(nearestAirports);
-            console.log("Nearest Airports: ", nearestAirports);
+            //console.log("Nearest Airports: ", nearestAirports);
+            console.log('Airports detail fetched successfully!');
             setLoading(false);
         } else {
-            console.log("Fetching API: Failed (Nearest Airports) -- Home.jsx");
+            console.log("Fetching API: Failed (Nearest Airports)");
         }
     }, [nearestAirports]);
 

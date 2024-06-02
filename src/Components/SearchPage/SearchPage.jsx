@@ -49,7 +49,7 @@ const SearchPage = () => {
 
     useEffect(() => {
         for (let param of searchParams.entries()) {
-            console.log(param); // logs a [key, value] pair for each query parameter
+           // console.log(param); // logs a [key, value] pair for each query parameter
         }
     }, [data.search]);
 
@@ -79,7 +79,7 @@ const SearchPage = () => {
         nonStop: false,
         currencyCode: searchParams.get("currencyCode")
     }
-    
+
     useEffect(() => {
         const fetchFlightOffers = async () => {
             setLoading(true);
@@ -95,7 +95,8 @@ const SearchPage = () => {
                             },
                         }
                     );
-                    console.log(response.data);
+                    //console.log(response.data);
+                    console.log('Flight offer fetched successfully');
                     if (response.data.data.length > 0) {
                         setDataAvailable(true);
                         setPassengerAndClass({
@@ -141,6 +142,12 @@ const SearchPage = () => {
             setFilterFlights(filterFlights.filter((flight) => flight !== e.target.value));
         }
     }
+
+    const handleFlightSelectButton = (isLoading) => {
+        setLoading(isLoading);
+    }
+
+    
 
     return (
         <>
@@ -310,7 +317,7 @@ const SearchPage = () => {
                                                         flight={flight}
                                                         currencyCode={params.currencyCode}
                                                         dictionaries={flightData.dictionaries}
-                                                        passengerAndClass={passengerAndClass}
+                                                        onSelect={handleFlightSelectButton}
                                                     />
                                                 );
                                             } else {
@@ -323,7 +330,7 @@ const SearchPage = () => {
                                                                 flight={flight}
                                                                 currencyCode={params.currencyCode}
                                                                 dictionaries={flightData.dictionaries}
-                                                                passengerAndClass={passengerAndClass}
+                                                                onSelect={handleFlightSelectButton}
                                                             />
                                                         );
                                                     }
