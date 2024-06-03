@@ -135,9 +135,6 @@ const Flight = ({ flight, isFirst, currencyCode, dictionaries, onSelect }) => {
 
             {/** Flight facilites information*/}
             <div className="facilities-info">
-                <div className="loading-container">
-                    <div className="loading-bar"></div>
-                </div>
                 <div className="left-facilities">
                     <div className="checked-bags">
                         <FaSuitcaseRolling className="icon" />CHECKED {

@@ -62,6 +62,7 @@
   background: rgba(255, 255, 255, 0.596);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
+  box-shadow: 0 2px 4px rgba(29, 29, 29, 0.1);
   font-family: "Inter", sans-serif;
 }
 .signup-left form input:focus {

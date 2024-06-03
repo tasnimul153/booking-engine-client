@@ -1,11 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.5b31c705.css",
-    "main.js": "/static/js/main.d2056a84.js",
+    "main.css": "/static/css/main.12a6e186.css",
+    "main.js": "/static/js/main.469951af.js",
     "static/media/plane.jpg": "/static/media/plane.d2dc0d8d8469e5d2e0c4.jpg",
     "static/media/BackgroundHomePage2.jpg": "/static/media/BackgroundHomePage2.134996f675f6b586fe08.jpg",
     "static/media/dealImg5.jpg": "/static/media/dealImg5.4882ace0800a5e8641a6.jpg",
-    "static/media/signupAirplane.jpg": "/static/media/signupAirplane.90284bb4ba0c742798ca.jpg",
     "static/media/dealImg6.jpg": "/static/media/dealImg6.b62f91194673d516b90a.jpg",
     "static/media/BackgroundHomePage1.jpg": "/static/media/BackgroundHomePage1.05912711fef2ad4627d9.jpg",
     "static/media/BackgroundHomePage4.jpg": "/static/media/BackgroundHomePage4.d73b1338f0fd6afc799c.jpg",
@@ -17,11 +16,11 @@
     "static/media/company_logo_trns.png": "/static/media/company_logo_trns.e83580c3ea7e43c20c5f.png",
     "static/media/company_logo.png": "/static/media/company_logo.ad8d9fcfb811bee6c757.png",
     "index.html": "/index.html",
-    "main.5b31c705.css.map": "/static/css/main.5b31c705.css.map",
-    "main.d2056a84.js.map": "/static/js/main.d2056a84.js.map"
+    "main.12a6e186.css.map": "/static/css/main.12a6e186.css.map",
+    "main.469951af.js.map": "/static/js/main.469951af.js.map"
   },
   "entrypoints": [
-    "static/css/main.5b31c705.css",
-    "static/js/main.d2056a84.js"
+    "static/css/main.12a6e186.css",
+    "static/js/main.469951af.js"
   ]
 }
